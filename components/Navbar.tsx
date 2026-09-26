@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
+import { MdDarkMode } from "react-icons/md";
+import { VscLightbulbSparkle } from "react-icons/vsc";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +21,12 @@ export default function Navbar() {
       : "text-slate-600 hover:text-cyan-600"
   }`;
 
-  // CV FILE
+  const mobileLinkClass = `block w-full rounded-lg px-4 py-3 text-sm font-medium transition ${
+    darkMode
+      ? "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
+      : "text-slate-700 hover:bg-slate-100 hover:text-cyan-600"
+  }`;
+
   const cvFile =
     "https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf";
 
@@ -31,16 +38,16 @@ export default function Navbar() {
           : "border-slate-200 bg-white/90"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-10">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
 
         {/* NAVBAR */}
-        <div className="relative flex h-20 items-center justify-between">
+        <div className="flex h-16 items-center justify-between sm:h-20">
 
           {/* LOGO */}
           <Link
             href="/"
             onClick={closeMenu}
-            className={`text-xl font-bold tracking-tight transition sm:text-2xl ${
+            className={`shrink-0 text-lg font-bold tracking-tight transition sm:text-xl md:text-2xl ${
               darkMode
                 ? "text-white hover:text-cyan-400"
                 : "text-slate-900 hover:text-cyan-600"
@@ -50,8 +57,8 @@ export default function Navbar() {
             <span className="text-cyan-400">.</span>
           </Link>
 
-          {/* CENTER NAVIGATION */}
-          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex lg:gap-10">
+          {/* DESKTOP NAVIGATION */}
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex lg:gap-10">
             <Link href="/" className={linkClass}>
               Home
             </Link>
@@ -69,92 +76,47 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="hidden items-center gap-5 md:flex">
+          {/* DESKTOP RIGHT SIDE */}
+          <div className="hidden items-center gap-4 md:flex lg:gap-5">
 
             {/* CV */}
-           <a
-  href="https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className={linkClass}
->
-  CV
-</a>
+            <a
+              href={cvFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              CV
+            </a>
 
             {/* CONTACT */}
             <Link
               href="/contact"
-              className="rounded-xl bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]"
+              className="rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] lg:px-5"
             >
               Contact
             </Link>
 
-            {/* THEME TOGGLE */}
+            {/* THEME */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle dark and light mode"
-              className={`group flex h-9 items-center gap-1 rounded-full border px-1.5 transition-all duration-300 ${
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
                 darkMode
                   ? "border-slate-700 bg-slate-900 hover:border-cyan-400"
                   : "border-slate-200 bg-slate-100 hover:border-cyan-500"
               }`}
             >
-
-              {/* MOON */}
-              <span
-                className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 ${
-                  !darkMode
-                    ? "bg-white text-indigo-500 shadow-sm"
-                    : "text-slate-500"
-                }`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
-                  />
-                </svg>
-              </span>
-
-              {/* SUN */}
-              <span
-                className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 ${
-                  darkMode
-                    ? "bg-cyan-400/15 text-amber-300"
-                    : "text-slate-400"
-                }`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="h-4 w-4"
-                >
-                  <circle cx="12" cy="12" r="4" />
-
-                  <path
-                    strokeLinecap="round"
-                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                  />
-                </svg>
-              </span>
-
+              {darkMode ? (
+                <MdDarkMode className="h-5 w-5 text-cyan-400" />
+              ) : (
+                <VscLightbulbSparkle className="h-5 w-5 text-amber-400" />
+              )}
             </button>
           </div>
 
           {/* MOBILE CONTROLS */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-1 md:hidden">
 
             {/* MOBILE THEME */}
             <button
@@ -166,98 +128,79 @@ export default function Navbar() {
                   : "text-slate-700 hover:bg-slate-100"
               }`}
             >
-              {darkMode ? "☀" : "☾"}
+              {darkMode ? (
+                <MdDarkMode className="h-5 w-5 text-cyan-400" />
+              ) : (
+                <VscLightbulbSparkle className="h-5 w-5 text-amber-400" />
+              )}
             </button>
 
-            {/* MOBILE MENU */}
+            {/* MOBILE MENU BUTTON */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className={`flex h-10 w-10 items-center justify-center rounded-lg border transition ${
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+              className={`flex h-10 w-10 items-center justify-center rounded-lg border text-lg transition ${
                 darkMode
                   ? "border-slate-700 text-slate-300 hover:border-cyan-400"
                   : "border-slate-300 text-slate-700 hover:border-cyan-500"
               }`}
-              aria-label="Toggle menu"
-              aria-expanded={menuOpen}
             >
               {menuOpen ? "✕" : "☰"}
             </button>
-
           </div>
         </div>
 
         {/* MOBILE MENU */}
         {menuOpen && (
           <div
-            className={`border-t py-4 md:hidden ${
-              darkMode ? "border-slate-800" : "border-slate-200"
+            className={`border-t py-3 md:hidden ${
+              darkMode
+                ? "border-slate-800"
+                : "border-slate-200"
             }`}
           >
             <div className="flex flex-col gap-1">
 
-              {/* HOME */}
               <Link
                 href="/"
                 onClick={closeMenu}
-                className={`rounded-lg px-4 py-3 text-sm transition ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-cyan-600"
-                }`}
+                className={mobileLinkClass}
               >
                 Home
               </Link>
 
-              {/* ABOUT */}
               <Link
                 href="/about"
                 onClick={closeMenu}
-                className={`rounded-lg px-4 py-3 text-sm transition ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-cyan-600"
-                }`}
+                className={mobileLinkClass}
               >
                 About
               </Link>
 
-              {/* SKILLS */}
               <Link
                 href="/skills"
                 onClick={closeMenu}
-                className={`rounded-lg px-4 py-3 text-sm transition ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-cyan-600"
-                }`}
+                className={mobileLinkClass}
               >
                 Skills
               </Link>
 
-              {/* PROJECTS */}
               <Link
                 href="/projects"
                 onClick={closeMenu}
-                className={`rounded-lg px-4 py-3 text-sm transition ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-cyan-600"
-                }`}
+                className={mobileLinkClass}
               >
                 Projects
               </Link>
 
               {/* MOBILE CV */}
-             <a
-  href="https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf"
+              <a
+                href={cvFile}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
-                className={`rounded-lg px-4 py-3 text-sm transition ${
-                  darkMode
-                    ? "text-slate-300 hover:bg-slate-900 hover:text-cyan-400"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-cyan-600"
-                }`}
+                className={mobileLinkClass}
               >
                 CV
               </a>
@@ -266,11 +209,10 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={closeMenu}
-                className="mt-2 rounded-xl bg-cyan-400 px-4 py-3 text-center font-semibold text-slate-950 transition hover:bg-cyan-300"
+                className="mt-2 block w-full rounded-xl bg-cyan-400 px-4 py-3 text-center text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >
                 Contact
               </Link>
-
             </div>
           </div>
         )}
