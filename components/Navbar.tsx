@@ -86,7 +86,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className={linkClass}
             >
-              CV
+              View CV
             </a>
 
             {/* CONTACT */}

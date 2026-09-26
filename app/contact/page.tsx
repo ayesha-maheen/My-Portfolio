@@ -1,10 +1,52 @@
+
 "use client";
 
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 
 export default function ContactPage() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    setIsSending(true);
+    setStatus("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message.");
+      }
+
+      setStatus("Message sent successfully!");
+      form.reset();
+    } catch (error) {
+      console.error(error);
+      setStatus("Something went wrong. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -248,13 +290,24 @@ export default function ContactPage() {
               {/* BUTTON */}
               <button
                 type="submit"
-                className="group w-full rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.25)]"
+                disabled={isSending}
+                className="group w-full rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.25)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Send Message
-                <span className="ml-2 transition-transform group-hover:translate-x-1">
-                  →
-                </span>
+                {isSending ? "Sending..." : "Send Message"}
+
+                {!isSending && (
+                  <span className="ml-2 transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                )}
               </button>
+
+              {/* STATUS */}
+              {status && (
+                <p className="text-center text-sm text-cyan-500 dark:text-cyan-400">
+                  {status}
+                </p>
+              )}
 
             </form>
           </div>
@@ -267,5 +320,5 @@ export default function ContactPage() {
 
       </div>
     </main>
-  );
+);
 }
