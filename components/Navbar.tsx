@@ -202,7 +202,7 @@ export default function Navbar() {
                 onClick={closeMenu}
                 className={mobileLinkClass}
               >
-                CV
+                View CV
               </a>
 
               {/* MOBILE CONTACT */}
