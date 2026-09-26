@@ -1,5 +1,5 @@
 export default function Resume() {
-  const cvFile = "/Ayesha%20Maheen%20flowCv%20resume%20.pdf";
+  const cvFile = "/Ayesha_Maheen_FlowCV_Resume.pdf";
 
   return (
     <section
@@ -77,10 +77,10 @@ export default function Resume() {
 
             </div>
 
-            {/* DOWNLOAD CV */}
+            {/* DOWNLOAD */}
             <a
               href={cvFile}
-              download="Ayesha_Maheen_flowCv_resume.pdf"
+              download="Ayesha_Maheen_FlowCV_Resume.pdf"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_28px_rgba(34,211,238,0.25)]"
             >
               Download CV

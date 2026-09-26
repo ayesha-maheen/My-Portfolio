@@ -19,6 +19,10 @@ export default function Navbar() {
       : "text-slate-600 hover:text-cyan-600"
   }`;
 
+  // CV FILE
+  const cvFile =
+    "https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf";
+
   return (
     <nav
       className={`fixed left-0 top-0 z-50 w-full border-b backdrop-blur-xl transition-colors duration-300 ${
@@ -29,6 +33,7 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-10">
 
+        {/* NAVBAR */}
         <div className="relative flex h-20 items-center justify-between">
 
           {/* LOGO */}
@@ -69,7 +74,7 @@ export default function Navbar() {
 
             {/* CV */}
             <a
-              href="/cv.pdf"
+              href={cvFile}
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
@@ -85,63 +90,67 @@ export default function Navbar() {
               Contact
             </Link>
 
-           <button
-  onClick={toggleTheme}
-  aria-label="Toggle dark and light mode"
-  className={`group flex h-9 items-center gap-1 rounded-full border px-1.5 transition-all duration-300 ${
-    darkMode
-      ? "border-slate-700 bg-slate-900 hover:border-cyan-400"
-      : "border-slate-200 bg-slate-100 hover:border-cyan-500"
-  }`}
->
-  {/* Moon */}
-  <span
-    className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 ${
-      !darkMode
-        ? "bg-white text-indigo-500 shadow-sm"
-        : "text-slate-500"
-    }`}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      className="h-4 w-4"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
-      />
-    </svg>
-  </span>
+            {/* THEME TOGGLE */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle dark and light mode"
+              className={`group flex h-9 items-center gap-1 rounded-full border px-1.5 transition-all duration-300 ${
+                darkMode
+                  ? "border-slate-700 bg-slate-900 hover:border-cyan-400"
+                  : "border-slate-200 bg-slate-100 hover:border-cyan-500"
+              }`}
+            >
 
-  {/* Sun */}
-  <span
-    className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 ${
-      darkMode
-        ? "bg-cyan-400/15 text-amber-300"
-        : "text-slate-400"
-    }`}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      className="h-4 w-4"
-    >
-      <circle cx="12" cy="12" r="4" />
-      <path
-        strokeLinecap="round"
-        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-      />
-    </svg>
-  </span>
-</button>
+              {/* MOON */}
+              <span
+                className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 ${
+                  !darkMode
+                    ? "bg-white text-indigo-500 shadow-sm"
+                    : "text-slate-500"
+                }`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-4 w-4"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                  />
+                </svg>
+              </span>
+
+              {/* SUN */}
+              <span
+                className={`flex h-7 w-7 items-center justify-center rounded-full transition-all duration-300 ${
+                  darkMode
+                    ? "bg-cyan-400/15 text-amber-300"
+                    : "text-slate-400"
+                }`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-4 w-4"
+                >
+                  <circle cx="12" cy="12" r="4" />
+
+                  <path
+                    strokeLinecap="round"
+                    d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                  />
+                </svg>
+              </span>
+
+            </button>
           </div>
 
           {/* MOBILE CONTROLS */}
@@ -173,6 +182,7 @@ export default function Navbar() {
             >
               {menuOpen ? "✕" : "☰"}
             </button>
+
           </div>
         </div>
 
@@ -185,6 +195,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-1">
 
+              {/* HOME */}
               <Link
                 href="/"
                 onClick={closeMenu}
@@ -197,6 +208,7 @@ export default function Navbar() {
                 Home
               </Link>
 
+              {/* ABOUT */}
               <Link
                 href="/about"
                 onClick={closeMenu}
@@ -209,6 +221,7 @@ export default function Navbar() {
                 About
               </Link>
 
+              {/* SKILLS */}
               <Link
                 href="/skills"
                 onClick={closeMenu}
@@ -221,6 +234,7 @@ export default function Navbar() {
                 Skills
               </Link>
 
+              {/* PROJECTS */}
               <Link
                 href="/projects"
                 onClick={closeMenu}
@@ -235,7 +249,7 @@ export default function Navbar() {
 
               {/* MOBILE CV */}
               <a
-                href="/cv.pdf"
+                href={cvFile}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
