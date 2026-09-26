@@ -4,34 +4,34 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100svh-64px)] overflow-hidden bg-white px-4 pt-16 pb-6 text-slate-900 transition-colors duration-300 dark:bg-[#050816] dark:text-white sm:px-6 sm:pt-24 sm:pb-12 md:px-10 md:pt-28"
+      className="relative overflow-hidden bg-white px-4 pt-20 pb-8 text-slate-900 transition-colors duration-300 dark:bg-[#050816] dark:text-white sm:px-6 sm:pt-24 sm:pb-12 md:px-10 md:pt-28 md:pb-16"
     >
       {/* Background Glow */}
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         {/* Cyan Glow */}
         <div
-          className="absolute left-[-80px] top-[12%] h-48 w-48 rounded-full bg-cyan-400/15 blur-[80px] dark:bg-cyan-400/25
+          className="absolute left-[-80px] top-[10%] h-44 w-44 rounded-full bg-cyan-400/15 blur-[70px] dark:bg-cyan-400/25
           sm:left-[5%] sm:h-64 sm:w-64 sm:blur-[100px]
           md:left-[10%] md:top-[15%] md:h-72 md:w-72 md:blur-[120px]"
         />
 
         {/* Violet Glow */}
         <div
-          className="absolute right-[-90px] top-[22%] h-52 w-52 rounded-full bg-violet-500/10 blur-[85px] dark:bg-violet-500/25
+          className="absolute right-[-80px] top-[20%] h-48 w-48 rounded-full bg-violet-500/10 blur-[75px] dark:bg-violet-500/25
           sm:right-[5%] sm:h-72 sm:w-72 sm:blur-[110px]
           md:right-[10%] md:top-[20%] md:h-80 md:w-80 md:blur-[130px]"
         />
 
         {/* Pink Glow */}
         <div
-          className="absolute bottom-[5%] left-1/2 h-52 w-52 -translate-x-1/2 rounded-full bg-pink-500/10 blur-[80px] dark:bg-pink-500/15
+          className="absolute bottom-[5%] left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-pink-500/10 blur-[75px] dark:bg-pink-500/15
           sm:h-64 sm:w-64 sm:blur-[100px]
           md:left-[35%] md:h-72 md:w-72 md:blur-[120px]"
         />
 
         {/* Morphing Shape */}
         <div
-          className="morphing-shape absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 opacity-10 blur-[2px] dark:opacity-20
+          className="morphing-shape absolute left-1/2 top-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2 opacity-10 blur-[2px] dark:opacity-20
           sm:h-80 sm:w-80
           md:h-[450px] md:w-[450px]"
         />
@@ -39,9 +39,7 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div
-        className="relative z-10 mx-auto flex min-h-[calc(100svh-80px)] max-w-5xl items-center justify-center text-center
-        sm:min-h-[calc(100svh-112px)]
-        md:min-h-[calc(100svh-128px)]"
+        className="relative z-10 mx-auto flex max-w-5xl items-center justify-center text-center"
       >
         <div className="w-full">
 
