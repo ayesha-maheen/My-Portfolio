@@ -51,7 +51,6 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-white px-5 py-28 text-slate-900 transition-colors duration-300 dark:bg-[#050816] dark:text-white sm:px-6 sm:py-32 md:px-10">
-
       {/* Background Glow */}
       <div className="pointer-events-none fixed inset-0">
         <div className="absolute left-[-10%] top-[15%] h-72 w-72 rounded-full bg-cyan-400/10 blur-[120px]" />
@@ -59,10 +58,8 @@ export default function ContactPage() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
-
         {/* HEADING */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
-
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-cyan-500 dark:text-cyan-400 sm:text-sm">
             Get In Touch
           </p>
@@ -82,10 +79,8 @@ export default function ContactPage() {
 
         {/* CONTENT */}
         <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-
           {/* CONTACT INFO */}
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-white/[0.035] sm:p-8">
-
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-cyan-500 dark:text-cyan-400">
               Contact Information
             </p>
@@ -152,13 +147,11 @@ export default function ContactPage() {
 
             {/* SOCIAL */}
             <div className="mt-7 border-t border-slate-200 pt-6 dark:border-white/10">
-
               <p className="text-xs uppercase tracking-wider text-slate-500">
                 Find me online
               </p>
 
               <div className="mt-3 flex flex-wrap gap-3">
-
                 <a
                   href="#"
                   className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm text-slate-700 transition hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-300"
@@ -172,15 +165,12 @@ export default function ContactPage() {
                 >
                   LinkedIn ↗
                 </a>
-
               </div>
             </div>
-
           </div>
 
           {/* FORM */}
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-white/[0.035] sm:p-8">
-
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-cyan-500 dark:text-cyan-400">
               Send a Message
             </p>
@@ -190,7 +180,6 @@ export default function ContactPage() {
             </h2>
 
             <form onSubmit={handleSubmit} className="mt-7 space-y-5">
-
               {/* NAME */}
               <div>
                 <label
@@ -290,6 +279,7 @@ export default function ContactPage() {
               {/* BUTTON */}
               <button
                 type="submit"
+                onClick={() => console.log("BUTTON CLICKED")}
                 disabled={isSending}
                 className="group w-full rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_35px_rgba(34,211,238,0.25)] disabled:cursor-not-allowed disabled:opacity-60"
               >
@@ -308,17 +298,14 @@ export default function ContactPage() {
                   {status}
                 </p>
               )}
-
             </form>
           </div>
-
         </div>
 
         <p className="mt-10 text-center text-sm text-slate-500">
           I&apos;ll get back to you as soon as possible.
         </p>
-
       </div>
     </main>
-);
+  );
 }
