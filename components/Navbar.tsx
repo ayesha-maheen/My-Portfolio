@@ -73,14 +73,14 @@ export default function Navbar() {
           <div className="hidden items-center gap-5 md:flex">
 
             {/* CV */}
-            <a
-              href={cvFile}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={linkClass}
-            >
-              CV
-            </a>
+           <a
+  href="https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={linkClass}
+>
+  CV
+</a>
 
             {/* CONTACT */}
             <Link
@@ -248,8 +248,8 @@ export default function Navbar() {
               </Link>
 
               {/* MOBILE CV */}
-              <a
-                href={cvFile}
+             <a
+  href="https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
