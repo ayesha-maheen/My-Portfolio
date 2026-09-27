@@ -43,18 +43,59 @@ export default function Navbar() {
         {/* NAVBAR */}
         <div className="flex h-16 items-center justify-between sm:h-20">
 
-          {/* LOGO */}
+          {/* LOGO + NAME */}
           <Link
             href="/"
             onClick={closeMenu}
-            className={`shrink-0 text-lg font-bold tracking-tight transition sm:text-xl md:text-2xl ${
-              darkMode
-                ? "text-white hover:text-cyan-400"
-                : "text-slate-900 hover:text-cyan-600"
-            }`}
+            className="group flex shrink-0 items-center gap-3"
           >
-            Ayesha Maheen
-            <span className="text-cyan-400">.</span>
+            {/* AM MONOGRAM */}
+            <span className="relative flex h-11 w-11 items-center justify-center sm:h-12 sm:w-12">
+
+              {/* Outer Ring */}
+              <span
+                className={`absolute inset-0 rotate-45 rounded-xl border transition-all duration-500 group-hover:rotate-[135deg] ${
+                  darkMode
+                    ? "border-cyan-400/50"
+                    : "border-cyan-500/50"
+                }`}
+              />
+
+              {/* Inner Shape */}
+              <span
+                className={`absolute inset-[4px] rounded-lg transition-all duration-300 ${
+                  darkMode
+                    ? "bg-slate-900 group-hover:bg-cyan-400"
+                    : "bg-white group-hover:bg-cyan-500"
+                }`}
+              />
+
+              {/* AM */}
+              <span
+                className={`relative z-10 text-sm font-black tracking-[-1px] transition-colors duration-300 sm:text-base ${
+                  darkMode
+                    ? "text-cyan-400 group-hover:text-slate-950"
+                    : "text-cyan-600 group-hover:text-white"
+                }`}
+              >
+                AM
+              </span>
+
+              {/* Small Dot */}
+              <span className="absolute -right-1 -top-1 z-20 h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)]" />
+            </span>
+
+            {/* NAME */}
+            <span
+              className={`text-lg font-bold tracking-tight transition-colors duration-300 sm:text-xl md:text-2xl ${
+                darkMode
+                  ? "text-white group-hover:text-cyan-400"
+                  : "text-slate-900 group-hover:text-cyan-600"
+              }`}
+            >
+              Ayesha Maheen
+              <span className="text-cyan-400">.</span>
+            </span>
           </Link>
 
           {/* DESKTOP NAVIGATION */}
