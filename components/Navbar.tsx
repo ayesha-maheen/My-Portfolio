@@ -27,8 +27,8 @@ export default function Navbar() {
       : "text-slate-700 hover:text-cyan-600"
   }`;
 
-  const cvFile: string =
-    "https://my-portfolio-bj8pcunvq-ayesha-maheen.vercel.app/Ayesha_Maheen_FlowCV_Resume.pdf";
+  // Resume PDF inside public folder
+  const cvFile = "/Ayesha_Maheen_FlowCV_Resume.pdf";
 
   return (
     <nav
@@ -39,20 +39,16 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
-
         {/* NAVBAR */}
         <div className="flex h-[72px] items-center justify-between">
-
           {/* LOGO + NAME */}
           <Link
-            href="/"
+            href="/#home"
             onClick={closeMenu}
             className="group flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3"
           >
             {/* AM MONOGRAM */}
             <span className="relative flex h-9 w-9 shrink-0 items-center justify-center sm:h-11 sm:w-11">
-
-              {/* Outer Ring */}
               <span
                 className={`absolute inset-0 rotate-45 rounded-xl border transition-all duration-500 group-hover:rotate-[135deg] ${
                   darkMode
@@ -61,7 +57,6 @@ export default function Navbar() {
                 }`}
               />
 
-              {/* Inner Shape */}
               <span
                 className={`absolute inset-[3px] rounded-lg transition-all duration-300 ${
                   darkMode
@@ -70,7 +65,6 @@ export default function Navbar() {
                 }`}
               />
 
-              {/* AM */}
               <span
                 className={`relative z-10 text-[10px] font-black tracking-[-1px] transition-colors duration-300 sm:text-sm ${
                   darkMode
@@ -81,7 +75,6 @@ export default function Navbar() {
                 AM
               </span>
 
-              {/* Small Dot */}
               <span className="absolute -right-1 -top-1 z-20 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)] sm:h-2.5 sm:w-2.5" />
             </span>
 
@@ -99,34 +92,34 @@ export default function Navbar() {
           </Link>
 
           {/* DESKTOP NAVIGATION */}
-          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex lg:gap-10">
-
-            <Link href="/" className={linkClass}>
+          <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 md:flex lg:gap-8">
+            <Link href="/#home" className={linkClass}>
               Home
             </Link>
 
-            <Link href="/about" className={linkClass}>
+            <Link href="/#about" className={linkClass}>
               About
             </Link>
 
-            
-            <Link href="/skills" className={linkClass}>
+            <Link href="/#experience" className={linkClass}>
+              Experience
+            </Link>
+
+            <Link href="/#skills" className={linkClass}>
               Skills
             </Link>
 
-            <Link href="/projects" className={linkClass}>
+            <Link href="/#projects" className={linkClass}>
               Projects
             </Link>
-
           </div>
 
           {/* DESKTOP RIGHT SIDE */}
           <div className="hidden items-center gap-4 md:flex lg:gap-5">
-
             {/* DOWNLOAD RESUME */}
             <a
               href={cvFile}
-              download
+              download="Ayesha_Maheen_FlowCV_Resume.pdf"
               className={`${linkClass} inline-flex cursor-pointer items-center gap-1.5`}
             >
               Download Resume
@@ -137,7 +130,7 @@ export default function Navbar() {
 
             {/* CONTACT */}
             <Link
-              href="/contact"
+              href="/#contact"
               className="cursor-pointer rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] lg:px-5"
             >
               Contact
@@ -163,8 +156,6 @@ export default function Navbar() {
 
           {/* MOBILE CONTROLS */}
           <div className="flex shrink-0 items-center gap-1 md:hidden">
-
-            {/* MOBILE THEME */}
             <button
               onClick={toggleTheme}
               aria-label="Toggle dark and light mode"
@@ -181,7 +172,6 @@ export default function Navbar() {
               )}
             </button>
 
-            {/* MOBILE MENU BUTTON */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
@@ -201,15 +191,12 @@ export default function Navbar() {
         {menuOpen && (
           <div
             className={`border-t py-3 md:hidden ${
-              darkMode
-                ? "border-slate-800"
-                : "border-slate-200"
+              darkMode ? "border-slate-800" : "border-slate-200"
             }`}
           >
             <div className="flex flex-col">
-
               <Link
-                href="/"
+                href="/#home"
                 onClick={closeMenu}
                 className={mobileLinkClass}
               >
@@ -217,16 +204,23 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/about"
+                href="/#about"
                 onClick={closeMenu}
                 className={mobileLinkClass}
               >
                 About
               </Link>
 
-             
               <Link
-                href="/skills"
+                href="/#experience"
+                onClick={closeMenu}
+                className={mobileLinkClass}
+              >
+                Experience
+              </Link>
+
+              <Link
+                href="/#skills"
                 onClick={closeMenu}
                 className={mobileLinkClass}
               >
@@ -234,17 +228,15 @@ export default function Navbar() {
               </Link>
 
               <Link
-                href="/projects"
+                href="/#projects"
                 onClick={closeMenu}
                 className={mobileLinkClass}
               >
                 Projects
               </Link>
 
-            
-
               <Link
-                href="/contact"
+                href="/#contact"
                 onClick={closeMenu}
                 className={mobileLinkClass}
               >
@@ -254,7 +246,7 @@ export default function Navbar() {
               {/* MOBILE DOWNLOAD RESUME */}
               <a
                 href={cvFile}
-                download
+                download="Ayesha_Maheen_FlowCV_Resume.pdf"
                 onClick={closeMenu}
                 className={`${mobileLinkClass} flex items-center gap-2`}
               >
@@ -264,7 +256,7 @@ export default function Navbar() {
 
               {/* MOBILE HIRE ME */}
               <Link
-                href="/contact"
+                href="/#contact"
                 onClick={closeMenu}
                 className="mt-2 inline-flex w-fit cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
               >

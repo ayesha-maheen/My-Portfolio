@@ -243,15 +243,14 @@ export default function ContactPage() {
                 </div>
 
                 {/* DOWNLOAD RESUME */}
-                <a
-                  href="/Ayesha_Maheen_FlowCV_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-50 px-5 py-2.5 text-sm font-semibold text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20 sm:w-auto"
-                >
-                  Download Resume
-                  <span className="ml-2">↓</span>
-                </a>
+              <a
+  href="/Ayesha_Maheen_FlowCV_Resume.pdf"
+  download="Ayesha_Maheen_FlowCV_Resume.pdf"
+  className="inline-flex w-full items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-50 px-5 py-2.5 text-sm font-semibold text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20 sm:w-auto"
+>
+  Download Resume
+  <span className="ml-2">↓</span>
+</a>
 
               </div>
             </div>

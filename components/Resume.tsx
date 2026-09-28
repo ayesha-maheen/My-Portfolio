@@ -27,8 +27,8 @@ export default function Resume() {
           <div className="mt-5 h-[2px] w-16 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:mt-6" />
 
           <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-400 sm:text-base sm:leading-8">
-            View my complete resume to explore my experience, technical
-            skills, education and professional background.
+            Explore my experience, technical skills, education and
+            professional background through my complete resume.
           </p>
         </div>
 
@@ -84,38 +84,12 @@ export default function Resume() {
               </div>
             </div>
 
-            {/* RIGHT ACTIONS */}
-            <div className="flex flex-col gap-3 sm:flex-row lg:shrink-0">
-              {/* VIEW CV */}
-              <a
-                href={cvFile}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-50 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:bg-cyan-400/10 dark:hover:text-cyan-300"
-              >
-                View CV
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M7 17 17 7M7 7h10v10"
-                  />
-                </svg>
-              </a>
-
-              {/* DOWNLOAD CV */}
+            {/* DOWNLOAD ACTION */}
+            <div className="flex lg:shrink-0">
               <a
                 href={cvFile}
                 download="Ayesha_Maheen_FlowCV_Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_28px_rgba(34,211,238,0.25)]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_28px_rgba(34,211,238,0.25)] sm:w-auto"
               >
                 Download CV
 
