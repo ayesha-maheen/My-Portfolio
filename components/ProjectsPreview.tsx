@@ -3,128 +3,193 @@ import Link from "next/link";
 const projects = [
   {
     number: "01",
-    title: "Chrono Task",
-    type: "Task Management App",
+    title: "PavilionCC",
+    category: "Sports Club Management",
     description:
-      "A modern task management application with a clean dashboard, task status tracking and a responsive user experience.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      "A white-label, multi-tenant sports club management platform with customizable branding, responsive interfaces and scalable backend services.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "NestJS",
+      "PostgreSQL",
+      "Supabase",
+      "Redis",
+      "Bull",
+      "Swagger",
+    ],
+    slug: "pavilioncc",
   },
   {
     number: "02",
-    title: "Contact Manager",
-    type: "Contact Management App",
+    title: "Facilifi",
+    category: "Asset Management",
     description:
-      "A contact management application for adding, editing, searching and organizing contacts with categories and groups.",
-    technologies: ["React", "Node.js", "Express.js", "MongoDB"],
+      "An asset management system designed to manage the complete asset lifecycle, including creating, assigning, transferring and retiring assets with role-based workflows.",
+    technologies: [
+      "React",
+      "Redux",
+      "NestJS",
+      "MySQL",
+      "Redis",
+      "REST API",
+      "RBAC",
+    ],
+    slug: "facilifi",
+  },
+  {
+    number: "03",
+    title: "Chrono Task",
+    category: "Productivity",
+    description:
+      "A modern task management application designed to help users organize daily tasks through a simple, responsive and intuitive interface.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+    ],
+    slug: "chrono-task",
+  },
+  {
+    number: "04",
+    title: "Contact Management System",
+    category: "Management",
+    description:
+      "A contact management application for organizing users and contact information with a structured interface, database and management features.",
+    technologies: [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express.js",
+    ],
+    slug: "contact-management",
   },
 ];
 
-export default function ProjectsPreview() {
+export default function ProjectsPage() {
   return (
-    <section className="relative overflow-hidden bg-white px-6 py-24 text-slate-900 transition-colors duration-300 dark:bg-[#070b1a] dark:text-white md:px-10">
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute left-[-10%] top-[20%] h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
-
-      <div className="pointer-events-none absolute bottom-[10%] right-[-10%] h-80 w-80 rounded-full bg-violet-500/10 blur-[130px]" />
-
+    <section
+      id="projects"
+      className="relative overflow-hidden bg-white px-4 pt-10 pb-16 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-12 sm:pb-20 md:px-10 lg:pt-16 lg:pb-24"
+    >
       <div className="relative z-10 mx-auto max-w-6xl">
 
-        {/* Heading */}
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+        {/* SECTION HEADING */}
+        <div className="mb-10 text-left sm:mb-14">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 sm:text-sm sm:tracking-[0.25em]">
+            My Work
+          </p>
 
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
-              My Work
-            </p>
-
-            <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-              Built{" "}
-              <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 bg-clip-text text-transparent dark:from-cyan-300 dark:via-blue-400 dark:to-violet-400">
-                &amp; Designed
-              </span>
-            </h2>
-
-            <p className="mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-400">
-              A few projects I’ve built using modern technologies and
-              thoughtful design.
-            </p>
-          </div>
-
-          {/* View All Projects */}
-          <Link
-            href="/projects"
-            className="group w-fit rounded-xl border border-cyan-400/40 bg-cyan-50 px-5 py-3 font-semibold text-cyan-700 transition duration-300 hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950 dark:bg-cyan-400/10 dark:text-cyan-300"
-          >
-            View All Projects
-            <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
-              →
+          <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+            Selected{" "}
+            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+              Projects
             </span>
-          </Link>
+          </h2>
 
+          <div className="mt-5 h-[2px] w-16 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:mt-6" />
+
+          <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-400 sm:text-base sm:leading-8">
+            A selection of projects I have worked on using modern
+            technologies and clean development practices.
+          </p>
         </div>
 
-        {/* Project Cards */}
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        {/* PROJECTS GRID */}
+        <div className="grid gap-6 md:grid-cols-2">
 
           {projects.map((project) => (
-            <div
+            <article
               key={project.title}
-              className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-xl dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.07] sm:p-8"
+              className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-xl dark:border-white/10 dark:bg-[#111111] dark:hover:border-cyan-400/30 sm:p-7"
             >
 
-              {/* Subtle Glow */}
-              <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-400/5 blur-3xl transition duration-500 group-hover:bg-cyan-400/10" />
+              {/* TOP GRADIENT LINE */}
+              <div className="absolute left-0 top-0 h-[2px] w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
-              {/* Top */}
-              <div className="relative z-10 flex items-center justify-between">
+              {/* HEADER */}
+              <div className="flex items-start justify-between gap-4">
 
-                <span className="text-sm font-semibold tracking-wider text-cyan-600 dark:text-cyan-400">
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
+                    {project.category}
+                  </p>
+
+                  <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+                    {project.title}
+                  </h3>
+                </div>
+
+                {/* NUMBER */}
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-slate-50 text-xs font-bold text-slate-500 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-400">
                   {project.number}
                 </span>
-
-                <span className="text-xl text-slate-400 transition duration-300 group-hover:text-cyan-500 dark:text-slate-600 dark:group-hover:text-cyan-400">
-                  ↗
-                </span>
-
               </div>
 
-              {/* Title */}
-              <h3 className="relative z-10 mt-8 text-2xl font-bold sm:text-3xl">
-                {project.title}
-              </h3>
+              {/* DIVIDER */}
+              <div className="my-5 h-px bg-slate-200 dark:bg-white/10" />
 
-              {/* Type */}
-              <p className="relative z-10 mt-2 text-sm font-medium text-cyan-600 dark:text-cyan-300">
-                {project.type}
-              </p>
-
-              {/* Description */}
-              <p className="relative z-10 mt-5 leading-7 text-slate-600 dark:text-slate-400">
+              {/* DESCRIPTION */}
+              <p className="text-sm leading-7 text-slate-600 dark:text-slate-400 sm:text-base">
                 {project.description}
               </p>
 
-              {/* Technologies */}
-              <div className="relative z-10 mt-7 flex flex-wrap gap-2">
-                {project.technologies.map((technology) => (
-                  <span
-                    key={technology}
-                    className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs text-slate-600 transition duration-300 group-hover:border-cyan-400/20 group-hover:text-cyan-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:group-hover:text-cyan-300"
-                  >
-                    {technology}
-                  </span>
-                ))}
+              {/* TECHNOLOGIES */}
+              <div className="mt-6">
+                <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
+                  Technologies
+                </p>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {project.technologies.map((technology) => (
+                    <span
+                      key={technology}
+                      className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-medium text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-50 hover:text-cyan-700 dark:border-white/10 dark:bg-white/[0.035] dark:text-slate-300 dark:hover:border-cyan-400/30 dark:hover:bg-cyan-400/10 dark:hover:text-cyan-300"
+                    >
+                      {technology}
+                    </span>
+                  ))}
+                </div>
               </div>
 
-              {/* Bottom Line */}
-              <div className="relative z-10 mt-8 h-px w-full bg-slate-200 transition duration-500 group-hover:bg-cyan-400/30 dark:bg-white/10" />
+              {/* FOOTER */}
+              <div className="mt-auto pt-7">
 
-              <p className="relative z-10 mt-4 text-xs uppercase tracking-[0.2em] text-slate-500">
-                Web Project
-              </p>
+                <div className="flex items-center justify-between border-t border-slate-200 pt-5 dark:border-white/10">
 
-            </div>
+                  <div className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+
+                    <span className="text-xs font-medium text-slate-400 dark:text-slate-500">
+                      Project {project.number}
+                    </span>
+                  </div>
+
+                  <Link
+                    href={`/projects/${project.slug}`}
+                    className="group/details inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-4 py-2.5 text-xs font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.2)]"
+                  >
+                    View Details
+
+                    <span className="transition-transform duration-300 group-hover/details:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+
+                </div>
+              </div>
+
+            </article>
           ))}
 
+        </div>
+
+        {/* BOTTOM TEXT */}
+        <div className="mt-12 text-center">
+          <p className="text-sm text-slate-500 dark:text-slate-500">
+            More projects coming soon.
+          </p>
         </div>
 
       </div>

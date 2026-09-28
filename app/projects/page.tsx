@@ -1,3 +1,6 @@
+
+import Link from "next/link";
+
 const projects = [
   {
     number: "01",
@@ -17,6 +20,7 @@ const projects = [
       "Swagger",
     ],
     accent: "cyan",
+    slug: "pavilioncc",
   },
   {
     number: "02",
@@ -34,6 +38,7 @@ const projects = [
       "RBAC",
     ],
     accent: "violet",
+    slug: "facilifi",
   },
   {
     number: "03",
@@ -48,6 +53,7 @@ const projects = [
       "TypeScript",
     ],
     accent: "pink",
+    slug: "chrono-task",
   },
   {
     number: "04",
@@ -62,12 +68,14 @@ const projects = [
       "Express.js",
     ],
     accent: "cyan",
+    slug: "contact-management",
   },
 ];
 
 export default function ProjectsPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-white px-5 py-28 text-slate-900 transition-colors duration-300 dark:bg-[#050816] dark:text-white sm:px-6 sm:py-32 md:px-10">
+
       {/* Background Glow */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute left-[-10%] top-[8%] h-80 w-80 rounded-full bg-cyan-400/10 blur-[130px]" />
@@ -76,6 +84,7 @@ export default function ProjectsPage() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
+
         {/* HEADER */}
         <div className="mx-auto mb-16 max-w-3xl text-center sm:mb-20">
           <p className="text-sm font-medium uppercase tracking-[0.35em] text-cyan-600 dark:text-cyan-400">
@@ -142,6 +151,7 @@ export default function ProjectsPage() {
                   {/* Browser Preview */}
                   <div className="absolute inset-x-6 bottom-6 top-24 sm:inset-x-10 sm:bottom-10 sm:top-28">
                     <div className="h-full overflow-hidden rounded-3xl border border-slate-200/70 bg-white/80 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#0a1022]/85">
+
                       {/* Browser Bar */}
                       <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4 dark:border-white/10">
                         <div className="flex gap-2">
@@ -222,12 +232,14 @@ export default function ProjectsPage() {
                           </div>
                         </div>
                       </div>
+
                     </div>
                   </div>
                 </div>
 
                 {/* PROJECT INFO */}
                 <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12">
+
                   <div className="flex items-center gap-3">
                     <span
                       className={`text-xs font-semibold uppercase tracking-[0.25em] ${
@@ -274,22 +286,19 @@ export default function ProjectsPage() {
                     </div>
                   </div>
 
-                  {/* Buttons */}
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <button
-                      type="button"
-                      className="rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.22)]"
+                  {/* VIEW DETAILS */}
+                  <div className="mt-8">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="group/details inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.22)]"
                     >
-                      Live Demo ↗
-                    </button>
-
-                    <button
-                      type="button"
-                      className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/50 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.035] dark:text-slate-300 dark:hover:text-cyan-300"
-                    >
-                      GitHub ↗
-                    </button>
+                      View Details
+                      <span className="transition-transform duration-300 group-hover/details:translate-x-1">
+                        →
+                      </span>
+                    </Link>
                   </div>
+
                 </div>
               </article>
             );
@@ -302,6 +311,7 @@ export default function ProjectsPage() {
             More projects coming soon.
           </p>
         </div>
+
       </div>
     </main>
   );

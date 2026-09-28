@@ -1,7 +1,9 @@
+
 "use client";
 
 import { FormEvent, useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 
 export default function ContactPage() {
   const [isSending, setIsSending] = useState(false);
@@ -55,13 +57,15 @@ export default function ContactPage() {
       {/* BACKGROUND GLOW */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-20 h-72 w-72 rounded-full bg-cyan-400/10 blur-[120px]" />
+
         <div className="absolute -right-32 top-1/3 h-80 w-80 rounded-full bg-violet-500/10 blur-[130px]" />
+
         <div className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-blue-500/5 blur-[110px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl">
 
-        {/* HEADING */}
+        {/* ================= HEADING ================= */}
         <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
 
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-500 dark:text-cyan-400 sm:text-sm">
@@ -81,10 +85,10 @@ export default function ContactPage() {
           </p>
         </div>
 
-        {/* MAIN CONTENT */}
+        {/* ================= MAIN CONTENT ================= */}
         <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-8">
 
-          {/* ================= CONTACT INFO ================= */}
+          {/* ================= CONTACT INFORMATION ================= */}
           <div className="group rounded-3xl border border-slate-200 bg-slate-50/90 p-6 shadow-sm backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-white/10 dark:bg-white/[0.035] dark:shadow-none sm:p-8">
 
             <div className="flex h-full flex-col">
@@ -104,7 +108,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              {/* CONTACT DETAILS */}
+              {/* ================= CONTACT DETAILS ================= */}
               <div className="mt-8 space-y-4">
 
                 {/* EMAIL */}
@@ -113,7 +117,7 @@ export default function ContactPage() {
                   className="group/item flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 transition duration-300 hover:border-cyan-400/50 hover:shadow-md dark:border-white/10 dark:bg-slate-950/40"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-500 dark:text-cyan-400">
-                    ✉
+                    <FiMail className="text-xl" />
                   </div>
 
                   <div className="min-w-0">
@@ -133,7 +137,7 @@ export default function ContactPage() {
                   className="group/item flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 transition duration-300 hover:border-cyan-400/50 hover:shadow-md dark:border-white/10 dark:bg-slate-950/40"
                 >
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 text-cyan-500 dark:text-cyan-400">
-                    ☎
+                    <FiPhone className="text-xl" />
                   </div>
 
                   <div>
@@ -150,7 +154,7 @@ export default function ContactPage() {
                 {/* LOCATION */}
                 <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-slate-950/40">
                   <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-400/10 text-violet-500 dark:text-violet-400">
-                    ⌖
+                    <FiMapPin className="text-xl" />
                   </div>
 
                   <div>
@@ -166,19 +170,22 @@ export default function ContactPage() {
 
               </div>
 
-              {/* AVAILABILITY */}
+              {/* ================= AVAILABILITY ================= */}
               <div className="mt-6 flex items-center gap-3 rounded-2xl border border-emerald-400/20 bg-emerald-400/5 px-4 py-3">
+
                 <span className="relative flex h-3 w-3">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+
                   <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
                 </span>
 
                 <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
                   Available for opportunities
                 </p>
+
               </div>
 
-              {/* SOCIAL LINKS */}
+              {/* ================= SOCIAL LINKS ================= */}
               <div className="mt-8 border-t border-slate-200 pt-6 dark:border-white/10">
 
                 <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -370,3 +377,4 @@ export default function ContactPage() {
     </main>
   );
 }
+
