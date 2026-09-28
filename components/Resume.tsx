@@ -115,7 +115,7 @@ export default function Resume() {
           <div className="my-7 h-px bg-slate-200 dark:bg-white/10" />
 
           {/* QUICK INFO */}
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {/* EXPERIENCE */}
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 dark:border-white/10 dark:bg-white/[0.03]">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
@@ -143,21 +143,6 @@ export default function Resume() {
 
               <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                 Modern Web Development
-              </p>
-            </div>
-
-            {/* DOCUMENT */}
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-violet-400/40 dark:border-white/10 dark:bg-white/[0.03]">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 dark:text-slate-500">
-                Document
-              </p>
-
-              <p className="mt-2 text-lg font-bold text-slate-900 dark:text-white">
-                PDF Resume
-              </p>
-
-              <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-                Updated Professional CV
               </p>
             </div>
           </div>
