@@ -26,8 +26,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-[#050816] dark:text-white">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                const savedTheme = localStorage.getItem("theme");
+
+                if (savedTheme === "light") {
+                  document.documentElement.classList.remove("dark");
+                } else {
+                  document.documentElement.classList.add("dark");
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+
+      <body className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white">
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>

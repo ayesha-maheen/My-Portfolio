@@ -66,70 +66,67 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="relative overflow-hidden bg-white px-4 pt-10 pb-16 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-12 sm:pb-20 md:px-10 lg:pt-16 lg:pb-24">
+    <main className="relative overflow-hidden bg-white px-4 pt-7 pb-10 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-12 md:px-10 lg:pt-11 lg:pb-14">
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* SECTION HEADING */}
-        <div className="mb-10 text-left sm:mb-14">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400 sm:text-sm sm:tracking-[0.25em]">
+        <div className="mb-6 text-left sm:mb-8">
+          <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white sm:text-xs">
             Get In Touch
           </p>
 
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
-            Let&apos;s{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
-              Connect
-            </span>
+          <h1 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
+            Let&apos;s Connect
           </h1>
 
-          <div className="mt-5 h-[2px] w-16 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:mt-6" />
+          {/* UNDERLINE */}
+          <div className="mt-3 h-[2px] w-full max-w-[220px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
-          <p className="mt-5 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-400 sm:text-base sm:leading-8">
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             Have a project idea, an opportunity, or simply want to say hello?
             Feel free to get in touch.
           </p>
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="grid gap-7 lg:grid-cols-[0.85fr_1.15fr] lg:gap-8">
+        <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
 
           {/* CONTACT INFORMATION */}
-          <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:shadow-xl dark:border-white/10 dark:bg-[#111111] dark:shadow-none sm:p-8">
+          <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
             {/* TOP ACCENT */}
-            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+            <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
                 Contact Information
               </p>
 
-              <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+              <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
                 Let&apos;s connect
               </h2>
 
-              <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">
+              <p className="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-200">
                 I&apos;m open to discussing projects, creative ideas,
                 freelance work, and development opportunities.
               </p>
             </div>
 
             {/* CONTACT DETAILS */}
-            <div className="mt-8 space-y-4">
+            <div className="mt-6 space-y-3">
 
               {/* EMAIL */}
               <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-cyan-400/40 dark:hover:bg-cyan-400/5 sm:gap-4">
-
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-50 text-cyan-600 dark:bg-cyan-400/10 dark:text-cyan-400">
                   <FiMail className="text-xl" />
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     Email
                   </p>
 
-                  <p className="mt-1 break-all text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <p className="mt-1 break-all text-sm font-medium text-slate-700 dark:text-slate-200">
                     ayeshamaheen348@gmail.com
                   </p>
                 </div>
@@ -160,11 +157,11 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     WhatsApp
                   </p>
 
-                  <p className="mt-1 text-sm font-medium text-slate-700 transition group-hover/item:text-blue-600 dark:text-slate-300 dark:group-hover/item:text-blue-400">
+                  <p className="mt-1 text-sm font-medium text-slate-700 transition group-hover/item:text-blue-600 dark:text-slate-200 dark:group-hover/item:text-blue-400">
                     03277132461
                   </p>
                 </div>
@@ -177,33 +174,32 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     Location
                   </p>
 
-                  <p className="mt-1 text-sm font-medium text-slate-700 dark:text-slate-300">
+                  <p className="mt-1 text-sm font-medium text-slate-700 dark:text-slate-200">
                     Pakistan
                   </p>
                 </div>
               </div>
-
             </div>
 
             {/* AVAILABILITY */}
-            <div className="mt-6 flex items-center gap-3 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 px-4 py-3">
+            <div className="mt-5 flex items-center gap-3 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 px-4 py-3">
               <span className="relative flex h-3 w-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-400" />
               </span>
 
-              <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Available for opportunities
+              <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+                Available for freelance projects
               </p>
             </div>
 
             {/* SOCIAL LINKS */}
-            <div className="mt-8 border-t border-slate-200 pt-6 dark:border-white/10">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+            <div className="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
                 Find Me Online
               </p>
 
@@ -215,7 +211,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="GitHub"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
+                  className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
                 >
                   <FaGithub className="text-xl" />
                 </a>
@@ -226,57 +222,52 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="LinkedIn"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
+                  className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
                 >
                   <FaLinkedinIn className="text-xl" />
                 </a>
-
               </div>
 
               {/* RESPONSE + RESUME */}
-              <div className="mt-6 flex flex-col items-start gap-4 border-t border-slate-200 pt-6 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
-
-                {/* RESPONSE TIME */}
-                <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+              <div className="mt-6 flex flex-col items-start gap-4 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-300">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
                   <span>Usually replies within 24 hours</span>
                 </div>
 
-                {/* DOWNLOAD RESUME */}
-              <a
-  href="/Ayesha_Maheen_FlowCV_Resume.pdf"
-  download="Ayesha_Maheen_FlowCV_Resume.pdf"
-  className="inline-flex w-full items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-50 px-5 py-2.5 text-sm font-semibold text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20 sm:w-auto"
->
-  Download Resume
-  <span className="ml-2">↓</span>
-</a>
-
+                <a
+                  href="/Ayesha_Maheen_FlowCV_Resume.pdf"
+                  download="Ayesha_Maheen_FlowCV_Resume.pdf"
+                  className="inline-flex w-full cursor-pointer items-center justify-center rounded-xl border border-cyan-400/30 bg-cyan-50 px-5 py-2.5 text-sm font-semibold text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20 sm:w-auto"
+                >
+                  Download Resume
+                  <span className="ml-2">↓</span>
+                </a>
               </div>
             </div>
           </div>
 
           {/* FORM */}
-          <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-400/30 hover:shadow-xl dark:border-white/10 dark:bg-[#111111] dark:shadow-none sm:p-8">
+          <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
             {/* TOP ACCENT */}
-            <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+            <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-400">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
               Send a Message
             </p>
 
-            <h2 className="mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
+            <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
               Tell me about your idea
             </h2>
 
-            <form onSubmit={handleSubmit} className="mt-7 space-y-5">
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
 
               {/* NAME */}
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Your Name
                 </label>
@@ -295,7 +286,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Email Address
                 </label>
@@ -314,10 +305,10 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="phone"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Phone Number{" "}
-                  <span className="text-xs text-slate-500">
+                  <span className="text-xs font-normal text-slate-500 dark:text-slate-400">
                     (Optional)
                   </span>
                 </label>
@@ -335,7 +326,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="subject"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Subject
                 </label>
@@ -353,7 +344,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="message"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
                   Message
                 </label>
@@ -372,7 +363,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={isSending}
-                className="group flex w-full items-center justify-center rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.12)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.22)] disabled:cursor-not-allowed disabled:opacity-60"
+                className="group flex w-full cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.12)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.22)] disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {isSending ? "Sending..." : "Send Message"}
 
@@ -395,16 +386,14 @@ export default function ContactPage() {
                   {status}
                 </div>
               )}
-
             </form>
           </div>
         </div>
 
         {/* FOOTER TEXT */}
-        <p className="mt-10 text-center text-xs text-slate-500 sm:text-sm">
+        <p className="mt-8 text-center text-xs text-slate-500 dark:text-slate-300 sm:text-sm">
           I&apos;ll get back to you as soon as possible.
         </p>
-
       </div>
     </main>
   );
