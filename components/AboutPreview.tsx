@@ -14,7 +14,7 @@ export default function About() {
             Get to know me
           </p>
 
-          <h2 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl md:text-5xl">
+          <h2 className="py-1 text-3xl font-extrabold leading-tight tracking-tight text-[#08bff5] sm:text-4xl md:text-5xl">
             About Me
           </h2>
 
@@ -27,31 +27,33 @@ export default function About() {
           {/* Left Content */}
           <div className="w-full text-left">
 
-          <h2 className="text-xl font-semibold sm:text-2xl md:text-3xl">
-  <span className="text-white">
-    Turning ideas into digital experiences.
-  </span>
-</h2>
+            <h2 className="text-xl font-semibold sm:text-2xl md:text-3xl">
+              <span className="text-white">
+                Turning ideas into digital experiences.
+              </span>
+            </h2>
 
-           <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-300 sm:text-base sm:leading-8">
-  I&apos;m a Full Stack Developer passionate about building modern,
-  responsive, and user-friendly web applications. I enjoy turning
-  ideas and designs into clean, functional, and scalable digital
-  experiences. I work across both frontend and backend development,
-  creating seamless user interfaces, RESTful APIs, and efficient
-  database-driven solutions.
-</p>
-           <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-  I work with modern technologies like React, Next.js,
-  TypeScript and Tailwind CSS, while continuously learning
-  and improving my development skills.
-</p>
+            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-300 sm:text-base sm:leading-8">
+              I&apos;m a Full Stack Developer passionate about building modern,
+              responsive, and user-friendly web applications. I enjoy turning
+              ideas and designs into clean, functional, and scalable digital
+              experiences. I work across both frontend and backend development,
+              creating seamless user interfaces, RESTful APIs, and efficient
+              database-driven solutions.
+            </p>
 
-<p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-  My goal is to build websites that are not only visually
-  appealing but also easy to use, responsive and reliable
-  across different devices.
-</p>
+            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
+              I work with modern technologies like React, Next.js,
+              TypeScript and Tailwind CSS, while continuously learning
+              and improving my development skills.
+            </p>
+
+            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
+              My goal is to build websites that are not only visually
+              appealing but also easy to use, responsive and reliable
+              across different devices.
+            </p>
+
             {/* Stats */}
             <div className="mt-5 grid max-w-xl grid-cols-2 gap-3 sm:mt-6 sm:gap-4">
 
@@ -81,13 +83,13 @@ export default function About() {
           </div>
 
           {/* Right Card */}
-          <div className="relative mx-auto w-full max-w-xs">
+          <div className="relative w-full lg:mx-auto">
 
             {/* Glow */}
             <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-violet-500/10 blur-3xl" />
 
             {/* Card */}
-            <div className="relative w-full max-w-[310px] overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111111]/95 sm:p-5">
+            <div className="relative w-full overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111111]/95 sm:p-5">
 
               {/* Top Gradient Line */}
               <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
@@ -96,7 +98,7 @@ export default function About() {
               <div className="flex items-center justify-between">
 
                 {/* Code Icon */}
-                <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-500 shadow-[0_0_25px_rgba(34,211,238,0.12)] dark:text-cyan-400">
+                <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-500 shadow-[0_0_25px_rgba(34,211,238,0.12)] dark:text-cyan-400">
                   <FiCode className="text-base" />
                 </div>
 
@@ -143,8 +145,8 @@ export default function About() {
                       </h4>
 
                       <p className="mt-0.5 text-[10px] leading-4 text-slate-500 dark:text-slate-300">
-  Simple and maintainable interfaces.
-</p>
+                        Simple and maintainable interfaces.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -162,8 +164,8 @@ export default function About() {
                       </h4>
 
                       <p className="mt-0.5 text-[10px] leading-4 text-slate-500 dark:text-slate-300">
-  Smooth experience on every device.
-</p>
+                        Smooth experience on every device.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -180,9 +182,9 @@ export default function About() {
                         Continuous Learning
                       </h4>
 
-                     <p className="mt-0.5 text-[10px] leading-4 text-slate-500 dark:text-slate-300">
-  Always exploring modern technologies.
-</p>
+                      <p className="mt-0.5 text-[10px] leading-4 text-slate-500 dark:text-slate-300">
+                        Always exploring modern technologies.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -191,6 +193,7 @@ export default function About() {
 
               {/* Code Box */}
               <div className="mt-3 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-white/[0.06]">
+
                 {/* Code Header */}
                 <div className="flex items-center gap-1.5 border-b border-slate-200 px-2.5 py-1.5 dark:border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-red-400" />

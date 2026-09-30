@@ -33,7 +33,7 @@ export default function Experience() {
           </h2>
 
           {/* Underline */}
-          <div className="mt-3 h-[2px] w-full max-w-lg rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+          <div className="mt-3 h-[2px] w-full max-w-[240px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:max-w-[300px]" />
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             My experience in developing modern web applications and working

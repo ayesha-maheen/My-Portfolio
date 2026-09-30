@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { FiArrowRight, FiExternalLink, FiGithub, FiX } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiExternalLink,
+  FiGithub,
+  FiX,
+} from "react-icons/fi";
 
 type Project = {
   title: string;
@@ -41,7 +46,6 @@ const projects: Project[] = [
     role:
       "Worked on frontend and backend development, API integration and application functionality.",
   },
-
   {
     title: "Facilifi",
     category: "Asset Management",
@@ -66,7 +70,6 @@ const projects: Project[] = [
     role:
       "Contributed to frontend development, API integration and implementation of application features.",
   },
-
   {
     title: "Chrono Task",
     category: "Productivity",
@@ -88,7 +91,6 @@ const projects: Project[] = [
     role:
       "Developed the frontend interface and implemented task management functionality.",
   },
-
   {
     title: "Contact Management System",
     category: "Management",
@@ -113,7 +115,13 @@ const projects: Project[] = [
 ];
 
 export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(
+    null
+  );
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <section
@@ -132,7 +140,8 @@ export default function ProjectsPage() {
             Selected Projects
           </h2>
 
-          <div className="mt-3 h-[2px] w-full max-w-sm rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+          {/* UNDERLINE */}
+          <div className="mt-3 h-[2px] w-full max-w-[270px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             A selection of projects I have worked on using modern
@@ -160,6 +169,7 @@ export default function ProjectsPage() {
                 {project.title}
               </h3>
 
+              {/* DIVIDER */}
               <div className="my-5 h-px bg-slate-200 dark:bg-white/10" />
 
               {/* DESCRIPTION */}
@@ -167,7 +177,7 @@ export default function ProjectsPage() {
                 {project.description}
               </p>
 
-              {/* BUTTON */}
+              {/* VIEW DETAILS */}
               <div className="mt-auto pt-6">
                 <div className="flex justify-end border-t border-slate-200 pt-5 dark:border-white/10">
                   <button
@@ -193,19 +203,16 @@ export default function ProjectsPage() {
         </div>
       </div>
 
-      {/* ================================================= */}
       {/* PROJECT DETAILS MODAL */}
-      {/* ================================================= */}
-
       {selectedProject && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm"
-          onClick={() => setSelectedProject(null)}
+          onClick={closeModal}
         >
           {/* MODAL BOX */}
           <div
             className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl dark:border-white/10 dark:bg-[#111111] sm:p-7"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
           >
             {/* TOP GRADIENT */}
             <div className="absolute left-0 right-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
@@ -213,7 +220,7 @@ export default function ProjectsPage() {
             {/* CLOSE BUTTON */}
             <button
               type="button"
-              onClick={() => setSelectedProject(null)}
+              onClick={closeModal}
               aria-label="Close project details"
               className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:text-cyan-500 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
             >
@@ -231,6 +238,7 @@ export default function ProjectsPage() {
               </h2>
             </div>
 
+            {/* DIVIDER */}
             <div className="my-5 h-px bg-slate-200 dark:bg-white/10" />
 
             {/* ABOUT PROJECT */}
@@ -295,9 +303,8 @@ export default function ProjectsPage() {
               </p>
             </div>
 
-            {/* BUTTONS */}
+            {/* ACTION BUTTONS */}
             <div className="mt-7 flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row">
-              
               {/* GITHUB */}
               {selectedProject.github && (
                 <a
@@ -327,7 +334,7 @@ export default function ProjectsPage() {
               {/* CLOSE */}
               <button
                 type="button"
-                onClick={() => setSelectedProject(null)}
+                onClick={closeModal}
                 className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
               >
                 Close

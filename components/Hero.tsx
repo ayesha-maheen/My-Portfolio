@@ -6,7 +6,6 @@ import {
   SiTypescript,
   SiJavascript,
   SiNodedotjs,
-  SiExpress,
   SiNestjs,
   SiMongodb,
   SiPostgresql,
@@ -31,24 +30,20 @@ export default function Hero() {
       icon: SiTypescript,
       color: "text-blue-500",
       hover: "hover:border-blue-400/50 hover:bg-blue-400/10",
+      desktopOnly: true,
     },
     {
       name: "JavaScript",
       icon: SiJavascript,
       color: "text-yellow-400",
       hover: "hover:border-yellow-400/50 hover:bg-yellow-400/10",
+      desktopOnly: true,
     },
     {
       name: "Node.js",
       icon: SiNodedotjs,
       color: "text-green-500",
       hover: "hover:border-green-400/50 hover:bg-green-400/10",
-    },
-    {
-      name: "Express",
-      icon: SiExpress,
-      color: "text-slate-700 dark:text-slate-200",
-      hover: "hover:border-slate-400/50 hover:bg-white/10",
     },
     {
       name: "NestJS",
@@ -109,20 +104,18 @@ export default function Hero() {
       className="relative overflow-hidden bg-white px-4 pt-24 pb-12 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-28 sm:pb-16 md:px-10 lg:min-h-screen lg:pt-32 lg:pb-20"
     >
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 sm:gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-
         {/* LEFT SIDE */}
         <div className="w-full text-left">
-
           {/* Available Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-3 py-1.5 text-xs font-medium text-cyan-600 dark:text-cyan-300">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-            Available for work
+           Available for Freelance Projects
           </div>
 
           {/* Intro */}
-          <p className="mt-6 text-sm font-medium text-slate-500 dark:text-slate-400 sm:text-base">
-            Hello, I&apos;m
-          </p>
+        <p className="mt-6 text-sm font-medium text-white sm:text-base">
+  Hello, I&apos;m
+</p>
 
           {/* Name */}
           <div className="mt-2">
@@ -193,7 +186,9 @@ export default function Hero() {
                 <span
                   key={skill.name}
                   title={skill.name}
-                  className={`group flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-slate-200 bg-white/80 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.04] ${skill.hover}`}
+                  className={`group flex h-11 w-11 cursor-pointer items-center justify-center rounded-2xl border border-slate-200 bg-white/80 shadow-sm backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-lg dark:border-white/10 dark:bg-white/[0.04] ${skill.hover} ${
+                    skill.desktopOnly ? "hidden sm:flex" : "flex"
+                  }`}
                 >
                   <Icon
                     className={`text-[22px] transition-transform duration-300 group-hover:scale-110 ${skill.color}`}
@@ -206,13 +201,11 @@ export default function Hero() {
 
         {/* RIGHT SIDE - DEVELOPER CARD */}
         <div className="relative mx-auto hidden w-full max-w-sm items-center justify-center lg:flex">
-
           {/* Glow */}
           <div className="absolute -inset-5 rounded-[3rem] bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-violet-500/10 blur-3xl" />
 
           {/* Card */}
           <div className="relative w-full max-w-[340px] overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111111]/95 sm:p-6">
-
             {/* Top Gradient Line */}
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
@@ -282,7 +275,6 @@ export default function Hero() {
 
             {/* Code Box */}
             <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-black/30">
-
               {/* Code Header */}
               <div className="flex items-center gap-1.5 border-b border-slate-200 px-3 py-2 dark:border-white/10">
                 <span className="h-2 w-2 rounded-full bg-red-400" />
