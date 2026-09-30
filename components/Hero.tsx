@@ -104,18 +104,20 @@ export default function Hero() {
       className="relative overflow-hidden bg-white px-4 pt-24 pb-12 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-28 sm:pb-16 md:px-10 lg:min-h-screen lg:pt-32 lg:pb-20"
     >
       <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 sm:gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+
         {/* LEFT SIDE */}
         <div className="w-full text-left">
+
           {/* Available Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 px-3 py-1.5 text-xs font-medium text-cyan-600 dark:text-cyan-300">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-           Available for Freelance Projects
+            Available for Freelance Projects
           </div>
 
           {/* Intro */}
-        <p className="mt-6 text-sm font-medium text-white sm:text-base">
-  Hello, I&apos;m
-</p>
+          <p className="mt-6 text-sm font-medium text-slate-900 dark:text-white sm:text-base">
+            Hello, I&apos;m
+          </p>
 
           {/* Name */}
           <div className="mt-2">
@@ -161,17 +163,19 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="mt-7 flex flex-wrap gap-3 sm:mt-8">
+
             <Link
               href="/#projects"
-              className="group inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-400/20"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-lg hover:shadow-cyan-400/20"
             >
               View My Work
               <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
 
+            {/* LET'S CONNECT → CONTACT COMPONENT */}
             <Link
               href="/#contact"
-              className="inline-flex items-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-500 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200 dark:hover:border-cyan-400/40 dark:hover:bg-white/[0.07] dark:hover:text-cyan-300"
+              className="inline-flex cursor-pointer items-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-500 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200 dark:hover:border-cyan-400/40 dark:hover:bg-white/[0.07] dark:hover:text-cyan-300"
             >
               Let&apos;s Connect
             </Link>
@@ -201,11 +205,13 @@ export default function Hero() {
 
         {/* RIGHT SIDE - DEVELOPER CARD */}
         <div className="relative mx-auto hidden w-full max-w-sm items-center justify-center lg:flex">
+
           {/* Glow */}
           <div className="absolute -inset-5 rounded-[3rem] bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-violet-500/10 blur-3xl" />
 
           {/* Card */}
           <div className="relative w-full max-w-[340px] overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-5 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111111]/95 sm:p-6">
+
             {/* Top Gradient Line */}
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
@@ -275,6 +281,7 @@ export default function Hero() {
 
             {/* Code Box */}
             <div className="mt-5 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-black/30">
+
               {/* Code Header */}
               <div className="flex items-center gap-1.5 border-b border-slate-200 px-3 py-2 dark:border-white/10">
                 <span className="h-2 w-2 rounded-full bg-red-400" />

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -7,12 +8,27 @@ import { MdDarkMode } from "react-icons/md";
 import { VscLightbulbSparkle } from "react-icons/vsc";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const { darkMode, toggleTheme } = useTheme();
 
-  const closeMenu = (): void => {
+  const cvFile = "/Ayesha_Maheen_FlowCV_Resume.pdf";
+
+  const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  // Smooth scroll to Contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    closeMenu();
   };
 
   const linkClass = `text-sm font-medium transition-colors duration-300 ${
@@ -27,9 +43,6 @@ export default function Navbar() {
       : "text-slate-700 hover:text-cyan-600"
   }`;
 
-  // Resume PDF inside public folder
-  const cvFile = "/Ayesha_Maheen_FlowCV_Resume.pdf";
-
   return (
     <nav
       className={`fixed left-0 top-0 z-50 w-full border-b backdrop-blur-xl transition-colors duration-300 ${
@@ -39,9 +52,11 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
-        {/* NAVBAR */}
+
+        {/* MAIN NAVBAR */}
         <div className="flex h-[72px] items-center justify-between">
-          {/* LOGO + NAME */}
+
+          {/* LOGO */}
           <Link
             href="/#home"
             onClick={closeMenu}
@@ -86,8 +101,7 @@ export default function Navbar() {
                   : "text-slate-900 group-hover:text-cyan-600"
               }`}
             >
-              Ayesha Maheen
-              <span className="text-cyan-400">.</span>
+              Ayesha Maheen<span className="text-cyan-400">.</span>
             </span>
           </Link>
 
@@ -116,6 +130,7 @@ export default function Navbar() {
 
           {/* DESKTOP RIGHT SIDE */}
           <div className="hidden items-center gap-4 md:flex lg:gap-5">
+
             {/* DOWNLOAD RESUME */}
             <a
               href={cvFile}
@@ -123,21 +138,21 @@ export default function Navbar() {
               className={`${linkClass} inline-flex cursor-pointer items-center gap-1.5`}
             >
               Download Resume
-              <span className="text-cyan-400 transition-transform duration-300 hover:translate-x-1">
-                →
-              </span>
+              <span className="text-cyan-400">→</span>
             </a>
 
-            {/* CONTACT */}
-            <Link
-              href="/#contact"
-              className="cursor-pointer rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] lg:px-5"
+            {/* CONTACT BUTTON */}
+            <button
+              type="button"
+              onClick={scrollToContact}
+              className="inline-flex cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-4 py-2.5 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)] lg:px-5"
             >
               Contact
-            </Link>
+            </button>
 
-            {/* THEME */}
+            {/* THEME TOGGLE */}
             <button
+              type="button"
               onClick={toggleTheme}
               aria-label="Toggle dark and light mode"
               className={`flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-full border transition-all duration-300 ${
@@ -156,7 +171,10 @@ export default function Navbar() {
 
           {/* MOBILE CONTROLS */}
           <div className="flex shrink-0 items-center gap-1 md:hidden">
+
+            {/* MOBILE THEME */}
             <button
+              type="button"
               onClick={toggleTheme}
               aria-label="Toggle dark and light mode"
               className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border transition ${
@@ -172,8 +190,10 @@ export default function Navbar() {
               )}
             </button>
 
+            {/* MOBILE MENU BUTTON */}
             <button
-              onClick={() => setMenuOpen(!menuOpen)}
+              type="button"
+              onClick={() => setMenuOpen((prev) => !prev)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
               className={`flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg border text-lg transition ${
@@ -191,10 +211,13 @@ export default function Navbar() {
         {menuOpen && (
           <div
             className={`border-t py-3 md:hidden ${
-              darkMode ? "border-slate-800" : "border-slate-200"
+              darkMode
+                ? "border-slate-800"
+                : "border-slate-200"
             }`}
           >
             <div className="flex flex-col">
+
               <Link
                 href="/#home"
                 onClick={closeMenu}
@@ -235,15 +258,16 @@ export default function Navbar() {
                 Projects
               </Link>
 
-              <Link
-                href="/#contact"
-                onClick={closeMenu}
-                className={mobileLinkClass}
+              {/* MOBILE CONTACT */}
+              <button
+                type="button"
+                onClick={scrollToContact}
+                className={`${mobileLinkClass} cursor-pointer text-left`}
               >
                 Contact
-              </Link>
+              </button>
 
-              {/* MOBILE DOWNLOAD RESUME */}
+              {/* DOWNLOAD RESUME */}
               <a
                 href={cvFile}
                 download="Ayesha_Maheen_FlowCV_Resume.pdf"
@@ -254,14 +278,14 @@ export default function Navbar() {
                 <span className="text-cyan-400">→</span>
               </a>
 
-              {/* MOBILE HIRE ME */}
-              <Link
-                href="/#contact"
-                onClick={closeMenu}
-                className="mt-2 inline-flex w-fit cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
+              {/* HIRE ME */}
+              <button
+                type="button"
+                onClick={scrollToContact}
+                className="mt-2 inline-flex w-fit cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:bg-cyan-300"
               >
                 Hire Me
-              </Link>
+              </button>
             </div>
           </div>
         )}

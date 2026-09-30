@@ -6,10 +6,6 @@ export default function Resume() {
       id="resume"
       className="relative overflow-hidden bg-white px-4 pt-10 pb-16 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-12 sm:pb-20 md:px-10 lg:pt-16 lg:pb-24"
     >
-      {/* Background Glow */}
-      <div className="pointer-events-none absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-cyan-400/10 blur-[120px]" />
-      <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-violet-500/10 blur-[120px]" />
-
       <div className="relative z-10 mx-auto max-w-6xl">
         {/* SECTION HEADING */}
         <div className="mb-10 text-left sm:mb-14">
@@ -21,6 +17,7 @@ export default function Resume() {
             Professional Profile
           </h2>
 
+          {/* UNDERLINE */}
           <div className="mt-3 h-[2px] w-full max-w-[270px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">

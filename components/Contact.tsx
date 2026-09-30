@@ -1,3 +1,4 @@
+
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -36,6 +37,9 @@ export default function ContactPage() {
       name: formData.get("name"),
       email: formData.get("email"),
       phone: formData.get("phone"),
+      projectType: formData.get("projectType"),
+      budget: formData.get("budget"),
+      timeline: formData.get("timeline"),
       subject: formData.get("subject"),
       message: formData.get("message"),
     };
@@ -65,8 +69,17 @@ export default function ContactPage() {
     }
   };
 
+  const inputClass =
+    "w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]";
+
+  const selectClass =
+    "w-full cursor-pointer appearance-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:focus:bg-white/[0.05]";
+
   return (
-    <main className="relative overflow-hidden bg-white px-4 pt-7 pb-10 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-12 md:px-10 lg:pt-11 lg:pb-14">
+    <main
+      id="contact"
+      className="relative scroll-mt-24 overflow-hidden bg-white px-4 pt-7 pb-10 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-12 md:px-10 lg:pt-11 lg:pb-14"
+    >
       <div className="relative z-10 mx-auto max-w-6xl">
 
         {/* SECTION HEADING */}
@@ -79,12 +92,11 @@ export default function ContactPage() {
             Let&apos;s Connect
           </h1>
 
-          {/* UNDERLINE */}
-          <div className="mt-3 h-[2px] w-full max-w-[220px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+          <div className="mt-3 h-[2px] w-full max-w-[240px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             Have a project idea, an opportunity, or simply want to say hello?
-            Feel free to get in touch.
+            Tell me a little about your project and I&apos;ll get back to you.
           </p>
         </div>
 
@@ -94,7 +106,6 @@ export default function ContactPage() {
           {/* CONTACT INFORMATION */}
           <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
-            {/* TOP ACCENT */}
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
             <div>
@@ -103,12 +114,12 @@ export default function ContactPage() {
               </p>
 
               <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
-                Let&apos;s connect
+                Let&apos;s work together
               </h2>
 
               <p className="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-200">
-                I&apos;m open to discussing projects, creative ideas,
-                freelance work, and development opportunities.
+                I&apos;m available for freelance projects, web applications,
+                frontend development and full-stack development opportunities.
               </p>
             </div>
 
@@ -135,7 +146,7 @@ export default function ContactPage() {
                   type="button"
                   onClick={copyEmail}
                   title={copied ? "Copied!" : "Copy email"}
-                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-50 text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20"
+                  className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-50 text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20"
                 >
                   {copied ? (
                     <span className="text-xs font-bold">✓</span>
@@ -205,7 +216,6 @@ export default function ContactPage() {
 
               <div className="mt-4 flex gap-3">
 
-                {/* GITHUB */}
                 <a
                   href="https://github.com/ayesha-maheen"
                   target="_blank"
@@ -216,7 +226,6 @@ export default function ContactPage() {
                   <FaGithub className="text-xl" />
                 </a>
 
-                {/* LINKEDIN */}
                 <a
                   href="https://www.linkedin.com/in/maheen-chaudry/"
                   target="_blank"
@@ -250,55 +259,60 @@ export default function ContactPage() {
           {/* FORM */}
           <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
-            {/* TOP ACCENT */}
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
-              Send a Message
+              Project Inquiry
             </p>
 
             <h2 className="mt-2 text-xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-2xl">
-              Tell me about your idea
+              Tell me about your project
             </h2>
+
+            <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-300">
+              Share a few details so I can better understand your requirements.
+            </p>
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
 
-              {/* NAME */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
-                >
-                  Your Name
-                </label>
+              {/* NAME + EMAIL */}
+              <div className="grid gap-4 sm:grid-cols-2">
 
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Enter your name"
-                  required
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]"
-                />
-              </div>
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
+                  >
+                    Your Name
+                  </label>
 
-              {/* EMAIL */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
-                >
-                  Email Address
-                </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    placeholder="Enter your name"
+                    required
+                    className={inputClass}
+                  />
+                </div>
 
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]"
-                />
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
+                  >
+                    Email Address
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                    className={inputClass}
+                  />
+                </div>
               </div>
 
               {/* PHONE */}
@@ -318,8 +332,122 @@ export default function ContactPage() {
                   name="phone"
                   type="tel"
                   placeholder="03XX XXXXXXX"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]"
+                  className={inputClass}
                 />
+              </div>
+
+              {/* PROJECT TYPE */}
+              <div>
+                <label
+                  htmlFor="projectType"
+                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
+                >
+                  Project Type
+                </label>
+
+                <div className="relative">
+                  <select
+                    id="projectType"
+                    name="projectType"
+                    required
+                    defaultValue=""
+                    className={selectClass}
+                  >
+                    <option value="" disabled>
+                      Select project type
+                    </option>
+                    <option value="Website">Website</option>
+                    <option value="Web Application">Web Application</option>
+                    <option value="E-commerce">E-commerce</option>
+                    <option value="Portfolio">Portfolio Website</option>
+                    <option value="Landing Page">Landing Page</option>
+                    <option value="Frontend Development">
+                      Frontend Development
+                    </option>
+                    <option value="Full Stack Development">
+                      Full Stack Development
+                    </option>
+                    <option value="Other">Other</option>
+                  </select>
+
+                  <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400">
+                    ▾
+                  </span>
+                </div>
+              </div>
+
+              {/* BUDGET + TIMELINE */}
+              <div className="grid gap-4 sm:grid-cols-2">
+
+                {/* BUDGET */}
+                <div>
+                  <label
+                    htmlFor="budget"
+                    className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
+                  >
+                    Budget
+                  </label>
+
+                  <div className="relative">
+                    <select
+                      id="budget"
+                      name="budget"
+                      required
+                      defaultValue=""
+                      className={selectClass}
+                    >
+                      <option value="" disabled>
+                        Select budget
+                      </option>
+                      <option value="Under $300">Under $300</option>
+                      <option value="$300 - $500">$300 - $500</option>
+                      <option value="$500 - $1,000">$500 - $1,000</option>
+                      <option value="$1,000 - $2,000">
+                        $1,000 - $2,000
+                      </option>
+                      <option value="$2,000+">$2,000+</option>
+                      <option value="Not sure yet">Not sure yet</option>
+                    </select>
+
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400">
+                      ▾
+                    </span>
+                  </div>
+                </div>
+
+                {/* TIMELINE */}
+                <div>
+                  <label
+                    htmlFor="timeline"
+                    className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
+                  >
+                    Timeline
+                  </label>
+
+                  <div className="relative">
+                    <select
+                      id="timeline"
+                      name="timeline"
+                      required
+                      defaultValue=""
+                      className={selectClass}
+                    >
+                      <option value="" disabled>
+                        Select timeline
+                      </option>
+                      <option value="ASAP">ASAP</option>
+                      <option value="1 - 2 Weeks">1 - 2 Weeks</option>
+                      <option value="2 - 4 Weeks">2 - 4 Weeks</option>
+                      <option value="1 - 2 Months">1 - 2 Months</option>
+                      <option value="2+ Months">2+ Months</option>
+                      <option value="Flexible">Flexible</option>
+                    </select>
+
+                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400">
+                      ▾
+                    </span>
+                  </div>
+                </div>
               </div>
 
               {/* SUBJECT */}
@@ -328,15 +456,18 @@ export default function ContactPage() {
                   htmlFor="subject"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
-                  Subject
+                  Subject{" "}
+                  <span className="text-xs font-normal text-slate-500 dark:text-slate-400">
+                    (Optional)
+                  </span>
                 </label>
 
                 <input
                   id="subject"
                   name="subject"
                   type="text"
-                  placeholder="What would you like to discuss?"
-                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]"
+                  placeholder="e.g. Business website development"
+                  className={inputClass}
                 />
               </div>
 
@@ -346,16 +477,16 @@ export default function ContactPage() {
                   htmlFor="message"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
                 >
-                  Message
+                  Project Details
                 </label>
 
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell me about your project, requirements, features, or anything else you'd like to discuss..."
                   required
-                  className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]"
+                  className={`${inputClass} resize-none`}
                 />
               </div>
 
@@ -365,7 +496,7 @@ export default function ContactPage() {
                 disabled={isSending}
                 className="group flex w-full cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.12)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.22)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSending ? "Sending..." : "Send Message"}
+                {isSending ? "Sending..." : "Send Project Inquiry"}
 
                 {!isSending && (
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
