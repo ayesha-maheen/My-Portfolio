@@ -1,3 +1,4 @@
+
 export default function Resume() {
   const cvFile = "/Ayesha_Maheen_FlowCV_Resume.pdf";
 
@@ -13,7 +14,7 @@ export default function Resume() {
             My Resume
           </p>
 
-          <h2 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
+          <h2 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-2xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
             Professional Profile
           </h2>
 
