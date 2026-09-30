@@ -1,4 +1,3 @@
-
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -92,7 +91,8 @@ export default function ContactPage() {
             Let&apos;s Connect
           </h1>
 
-          <div className="mt-3 h-[2px] w-full max-w-[240px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+          {/* Underline - smaller on mobile */}
+          <div className="mt-3 h-[2px] w-[180px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:w-[220px] md:w-[240px]" />
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             Have a project idea, an opportunity, or simply want to say hello?
