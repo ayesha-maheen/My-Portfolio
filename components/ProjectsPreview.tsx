@@ -141,7 +141,7 @@ export default function ProjectsPage() {
           </h2>
 
           {/* UNDERLINE */}
-<div className="mt-3 h-[2px] w-full max-w-[250px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+<div className="mt-3 h-[2px] w-full max-w-[230px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             A selection of projects I have worked on using modern
             technologies and clean development practices.
