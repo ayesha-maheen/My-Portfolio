@@ -174,7 +174,7 @@ export default function Hero() {
 
             {/* LET'S CONNECT → CONTACT COMPONENT */}
             <Link
-              href="/#contact"
+              href="#contact"
               className="inline-flex cursor-pointer items-center rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-500 dark:border-white/10 dark:bg-white/[0.04] dark:text-slate-200 dark:hover:border-cyan-400/40 dark:hover:bg-white/[0.07] dark:hover:text-cyan-300"
             >
               Let&apos;s Connect
