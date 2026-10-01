@@ -1,3 +1,5 @@
+import { HiOutlineDownload } from "react-icons/hi";
+
 export default function Resume() {
   const cvFile = "/Ayesha_Maheen_FlowCV_Resume.pdf";
 
@@ -85,20 +87,7 @@ export default function Resume() {
               >
                 Download CV
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="h-4 w-4"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"
-                  />
-                </svg>
+                <HiOutlineDownload className="h-5 w-5" />
               </a>
             </div>
           </div>

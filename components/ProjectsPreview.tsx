@@ -15,6 +15,9 @@ type Project = {
   technologies: string[];
   features: React.ReactNode[];
   role: React.ReactNode;
+  problem: React.ReactNode;
+  built: React.ReactNode[];
+  impact: React.ReactNode[];
   github?: string;
   live?: string;
 };
@@ -23,6 +26,7 @@ const projects: Project[] = [
   {
     title: "PavilionCC",
     category: "Sports Club Management",
+
     description: (
       <>
         A{" "}
@@ -40,6 +44,7 @@ const projects: Project[] = [
         .
       </>
     ),
+
     technologies: [
       "Next.js",
       "TypeScript",
@@ -51,6 +56,7 @@ const projects: Project[] = [
       "Bull",
       "Swagger",
     ],
+
     features: [
       <>
         <span className="font-medium text-cyan-600 dark:text-cyan-300">
@@ -78,24 +84,92 @@ const projects: Project[] = [
         </span>
       </>,
     ],
+
     role: (
       <>
-        Worked on{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          frontend and backend development
+        Worked as a{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          full-stack developer
         </span>
-        , API integration and{" "}
+        , contributing to frontend and backend development, API integration,
+        and{" "}
         <span className="font-medium text-violet-600 dark:text-violet-300">
           application functionality
         </span>
         .
       </>
     ),
+
+    problem: (
+      <>
+        Sports clubs need a centralized platform to manage their operations,
+        members, and club-specific requirements. The challenge was to build a
+        flexible system that could support{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          multiple clubs
+        </span>{" "}
+        while keeping their data and branding properly isolated.
+      </>
+    ),
+
+    built: [
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Multi-tenant architecture
+        </span>{" "}
+        — designed the platform to support multiple sports clubs with
+        isolated data.
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Customizable branding
+        </span>{" "}
+        — enabled clubs to maintain their own branding and identity.
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          Responsive interface
+        </span>{" "}
+        — developed responsive user interfaces for different screen sizes.
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Backend services
+        </span>{" "}
+        — contributed to scalable backend services and RESTful API
+        integration.
+      </>,
+    ],
+
+    impact: [
+      <>
+        Built a{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          scalable multi-club platform
+        </span>{" "}
+        with isolated tenant data.
+      </>,
+      <>
+        Improved club management through{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          centralized digital workflows
+        </span>
+        .
+      </>,
+      <>
+        Delivered a{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          responsive and customizable experience
+        </span>{" "}
+        for different clubs.
+      </>,
+    ],
   },
 
   {
     title: "Facilifi",
     category: "Asset Management",
+
     description: (
       <>
         An{" "}
@@ -113,6 +187,7 @@ const projects: Project[] = [
         .
       </>
     ),
+
     technologies: [
       "React",
       "Redux",
@@ -122,6 +197,7 @@ const projects: Project[] = [
       "REST API",
       "RBAC",
     ],
+
     features: [
       <>
         <span className="font-medium text-cyan-600 dark:text-cyan-300">
@@ -149,24 +225,90 @@ const projects: Project[] = [
         </span>
       </>,
     ],
+
     role: (
       <>
-        Contributed to{" "}
+        Contributed as a{" "}
         <span className="font-medium text-blue-600 dark:text-blue-300">
-          frontend development
+          full-stack developer
         </span>
-        , API integration and implementation of{" "}
+        , working on frontend development, API integration and{" "}
         <span className="font-medium text-violet-600 dark:text-violet-300">
           application features
         </span>
         .
       </>
     ),
+
+    problem: (
+      <>
+        Organizations need an efficient way to track assets throughout their
+        lifecycle. Managing asset assignments, transfers, and access manually
+        can make it difficult to maintain{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          accurate asset records
+        </span>{" "}
+        and controlled workflows.
+      </>
+    ),
+
+    built: [
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Asset lifecycle management
+        </span>{" "}
+        — implemented workflows for creating, assigning, transferring and
+        managing assets.
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Role-based access control
+        </span>{" "}
+        — supported controlled access for different user roles.
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          API integration
+        </span>{" "}
+        — connected frontend functionality with backend REST APIs.
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Structured workflows
+        </span>{" "}
+        — created organized flows for asset management operations.
+      </>,
+    ],
+
+    impact: [
+      <>
+        Improved visibility across the{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          complete asset lifecycle
+        </span>
+        .
+      </>,
+      <>
+        Supported more controlled asset operations through{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          role-based workflows
+        </span>
+        .
+      </>,
+      <>
+        Provided a centralized interface for{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          asset management
+        </span>
+        .
+      </>,
+    ],
   },
 
   {
     title: "Chrono Task",
     category: "Productivity",
+
     description: (
       <>
         A{" "}
@@ -180,12 +322,14 @@ const projects: Project[] = [
         and intuitive interface.
       </>
     ),
+
     technologies: [
       "React",
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
     ],
+
     features: [
       <>
         <span className="font-medium text-cyan-600 dark:text-cyan-300">
@@ -213,6 +357,7 @@ const projects: Project[] = [
         </span>
       </>,
     ],
+
     role: (
       <>
         Developed the{" "}
@@ -226,11 +371,68 @@ const projects: Project[] = [
         .
       </>
     ),
+
+    problem: (
+      <>
+        Users often need a simple way to organize daily tasks without dealing
+        with complicated interfaces. The goal was to create a{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          clean and straightforward
+        </span>{" "}
+        task management experience that works smoothly across devices.
+      </>
+    ),
+
+    built: [
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Task management
+        </span>{" "}
+        — implemented functionality for organizing daily tasks.
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Responsive interface
+        </span>{" "}
+        — designed the application to work across different screen sizes.
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          Modern UI
+        </span>{" "}
+        — created a clean and intuitive user interface.
+      </>,
+    ],
+
+    impact: [
+      <>
+        Provided a{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          simple task organization
+        </span>{" "}
+        experience.
+      </>,
+      <>
+        Delivered a{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          responsive interface
+        </span>{" "}
+        across devices.
+      </>,
+      <>
+        Created a clean foundation for{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          productivity-focused features
+        </span>
+        .
+      </>,
+    ],
   },
 
   {
     title: "Contact Management System",
     category: "Management",
+
     description: (
       <>
         A{" "}
@@ -248,12 +450,14 @@ const projects: Project[] = [
         .
       </>
     ),
+
     technologies: [
       "React",
       "Node.js",
       "Express.js",
       "MongoDB",
     ],
+
     features: [
       <>
         <span className="font-medium text-cyan-600 dark:text-cyan-300">
@@ -281,6 +485,7 @@ const projects: Project[] = [
         </span>
       </>,
     ],
+
     role: (
       <>
         Worked on{" "}
@@ -294,6 +499,68 @@ const projects: Project[] = [
         .
       </>
     ),
+
+    problem: (
+      <>
+        Managing contact information manually can make it difficult to keep
+        records organized and accessible. The goal was to create a{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          centralized contact management system
+        </span>{" "}
+        with a simple and structured interface.
+      </>
+    ),
+
+    built: [
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Contact management
+        </span>{" "}
+        — created functionality for adding, editing and managing contacts.
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          REST APIs
+        </span>{" "}
+        — developed backend APIs for contact operations.
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          MongoDB integration
+        </span>{" "}
+        — connected the application with MongoDB for data persistence.
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Responsive interface
+        </span>{" "}
+        — built a responsive interface for managing contacts.
+      </>,
+    ],
+
+    impact: [
+      <>
+        Provided a centralized way to{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          organize contact information
+        </span>
+        .
+      </>,
+      <>
+        Simplified contact operations through{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          structured workflows
+        </span>
+        .
+      </>,
+      <>
+        Created a full-stack application using{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          React, Node.js and MongoDB
+        </span>
+        .
+      </>,
+    ],
   },
 ];
 
@@ -423,38 +690,78 @@ export default function ProjectsPage() {
                 <h2 className="mt-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-2xl font-extrabold tracking-tight text-transparent sm:text-3xl">
                   {selectedProject.title}
                 </h2>
+
+                {/* PRIVATE / NDA PROJECT */}
+                {selectedProject.title !== "Contact Management System" && (
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-violet-600 dark:text-violet-400">
+                    Private / NDA Project
+                  </p>
+                )}
               </div>
             </div>
 
             {/* SCROLLABLE CONTENT */}
             <div className="overflow-y-auto px-5 py-5 sm:px-7 sm:py-6">
-              {/* ABOUT PROJECT */}
+              {/* ROLE */}
               <div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                  About the Project
+                  Role
                 </h3>
 
                 <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base">
-                  {selectedProject.description}
+                  {selectedProject.role}
                 </p>
               </div>
 
-              {/* KEY FEATURES */}
-              <div className="mt-6">
+              {/* PROBLEM */}
+              <div className="mt-7">
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                  Key Features
+                  Problem
                 </h3>
 
-                <div className="mt-3 space-y-2">
-                  {selectedProject.features.map((feature, index) => (
+                <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base">
+                  {selectedProject.problem}
+                </p>
+              </div>
+
+              {/* WHAT I BUILT */}
+              <div className="mt-7">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  What I Built
+                </h3>
+
+                <div className="mt-3 space-y-3">
+                  {selectedProject.built.map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 dark:border-white/10 dark:bg-white/[0.04]"
+                      className="flex items-start gap-3"
                     >
-                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
 
-                      <p className="text-sm leading-6 text-slate-600 dark:text-slate-200">
-                        {feature}
+                      <p className="text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base">
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* IMPACT */}
+              <div className="mt-7">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  Impact
+                </h3>
+
+                <div className="mt-3 space-y-3">
+                  {selectedProject.impact.map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3"
+                    >
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-violet-400" />
+
+                      <p className="text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base">
+                        {item}
                       </p>
                     </div>
                   ))}
@@ -462,7 +769,7 @@ export default function ProjectsPage() {
               </div>
 
               {/* TECHNOLOGIES */}
-              <div className="mt-6">
+              <div className="mt-7">
                 <h3 className="text-base font-bold text-slate-900 dark:text-white">
                   Technologies
                 </h3>
@@ -472,7 +779,9 @@ export default function ProjectsPage() {
                     (technology, index) => {
                       const technologyColors = [
                         "border-cyan-400/30 bg-cyan-400/10 text-cyan-600 hover:border-cyan-400/50 hover:bg-cyan-400/15 dark:text-cyan-300",
+
                         "border-blue-400/30 bg-blue-400/10 text-blue-600 hover:border-blue-400/50 hover:bg-blue-400/15 dark:text-blue-300",
+
                         "border-violet-400/30 bg-violet-400/10 text-violet-600 hover:border-violet-400/50 hover:bg-violet-400/15 dark:text-violet-300",
                       ];
 
@@ -491,17 +800,6 @@ export default function ProjectsPage() {
                     }
                   )}
                 </div>
-              </div>
-
-              {/* MY ROLE */}
-              <div className="mt-6">
-                <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                  My Role
-                </h3>
-
-                <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200">
-                  {selectedProject.role}
-                </p>
               </div>
 
               {/* ACTION BUTTONS */}

@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -6,6 +5,7 @@ import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
 import { MdDarkMode } from "react-icons/md";
 import { VscLightbulbSparkle } from "react-icons/vsc";
+import { HiOutlineDownload } from "react-icons/hi";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -138,7 +138,7 @@ export default function Navbar() {
               className={`${linkClass} inline-flex cursor-pointer items-center gap-1.5`}
             >
               Download Resume
-              <span className="text-cyan-400">→</span>
+              <HiOutlineDownload className="text-cyan-400" />
             </a>
 
             {/* CONTACT BUTTON */}
@@ -275,7 +275,7 @@ export default function Navbar() {
                 className={`${mobileLinkClass} flex items-center gap-2`}
               >
                 Download Resume
-                <span className="text-cyan-400">→</span>
+                <HiOutlineDownload className="text-cyan-400" />
               </a>
 
               {/* HIRE ME */}
