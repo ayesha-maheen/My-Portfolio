@@ -60,37 +60,35 @@ export default function Navbar() {
           <Link
             href="/#home"
             onClick={closeMenu}
-            className="group flex min-w-0 shrink-0 items-center gap-2.5 sm:gap-3"
+            className="group flex min-w-0 shrink-0 items-center gap-2.5"
           >
-            {/* AM MONOGRAM */}
-            <span className="relative flex h-9 w-9 shrink-0 items-center justify-center sm:h-11 sm:w-11">
+            {/* AESTHETIC A MONOGRAM */}
+            <span className="relative flex h-10 w-9 shrink-0 cursor-pointer items-center justify-center">
+              {/* LEFT ACCENT */}
               <span
-                className={`absolute inset-0 rotate-45 rounded-xl border transition-all duration-500 group-hover:rotate-[135deg] ${
+                className={`absolute left-0 top-1/2 h-5 w-[1px] -translate-y-1/2 transition-all duration-300 ${
                   darkMode
-                    ? "border-cyan-400/50"
-                    : "border-cyan-500/50"
+                    ? "bg-cyan-400/50 group-hover:h-7 group-hover:bg-cyan-400"
+                    : "bg-cyan-500/50 group-hover:h-7 group-hover:bg-cyan-500"
                 }`}
               />
 
-              <span
-                className={`absolute inset-[3px] rounded-lg transition-all duration-300 ${
-                  darkMode
-                    ? "bg-slate-900 group-hover:bg-cyan-400"
-                    : "bg-white group-hover:bg-cyan-500"
-                }`}
-              />
-
-              <span
-                className={`relative z-10 text-[10px] font-black tracking-[-1px] transition-colors duration-300 sm:text-sm ${
-                  darkMode
-                    ? "text-cyan-400 group-hover:text-slate-950"
-                    : "text-cyan-600 group-hover:text-white"
-                }`}
-              >
-                AM
+              {/* A */}
+              <span className="relative z-10 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-2xl font-black leading-none text-transparent transition-transform duration-300 group-hover:scale-110 sm:text-3xl">
+                A
               </span>
 
-              <span className="absolute -right-1 -top-1 z-20 h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.7)] sm:h-2.5 sm:w-2.5" />
+              {/* SMALL ACCENT DOT */}
+              <span className="absolute right-0 top-1 h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-all duration-300 group-hover:scale-125" />
+
+              {/* BOTTOM ACCENT */}
+              <span
+                className={`absolute bottom-1 left-2 h-[1px] w-4 transition-all duration-300 ${
+                  darkMode
+                    ? "bg-violet-400/60 group-hover:w-6 group-hover:bg-violet-400"
+                    : "bg-violet-500/60 group-hover:w-6 group-hover:bg-violet-500"
+                }`}
+              />
             </span>
 
             {/* NAME */}
@@ -101,7 +99,8 @@ export default function Navbar() {
                   : "text-slate-900 group-hover:text-cyan-600"
               }`}
             >
-              Ayesha Maheen<span className="text-cyan-400">.</span>
+              Ayesha Maheen
+              <span className="text-cyan-400">.</span>
             </span>
           </Link>
 
