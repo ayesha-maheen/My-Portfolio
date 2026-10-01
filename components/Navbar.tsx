@@ -64,6 +64,7 @@ export default function Navbar() {
           >
             {/* AESTHETIC A MONOGRAM */}
             <span className="relative flex h-10 w-9 shrink-0 cursor-pointer items-center justify-center">
+
               {/* LEFT ACCENT */}
               <span
                 className={`absolute left-0 top-1/2 h-5 w-[1px] -translate-y-1/2 transition-all duration-300 ${
@@ -77,9 +78,6 @@ export default function Navbar() {
               <span className="relative z-10 bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 bg-clip-text text-2xl font-black leading-none text-transparent transition-transform duration-300 group-hover:scale-110 sm:text-3xl">
                 A
               </span>
-
-              {/* SMALL ACCENT DOT */}
-              <span className="absolute right-0 top-1 h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)] transition-all duration-300 group-hover:scale-125" />
 
               {/* BOTTOM ACCENT */}
               <span
