@@ -1,3 +1,4 @@
+
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -90,9 +91,6 @@ export default function ContactPage() {
           <h1 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
             Let&apos;s Connect
           </h1>
-
-          {/* Underline - smaller on mobile */}
-          <div className="mt-3 h-[2px] w-[180px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:w-[220px] md:w-[240px]" />
 
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             Have a project idea, an opportunity, or simply want to say hello?
@@ -216,6 +214,7 @@ export default function ContactPage() {
 
               <div className="mt-4 flex gap-3">
 
+                {/* GITHUB */}
                 <a
                   href="https://github.com/ayesha-maheen"
                   target="_blank"
@@ -226,6 +225,7 @@ export default function ContactPage() {
                   <FaGithub className="text-xl" />
                 </a>
 
+                {/* LINKEDIN */}
                 <a
                   href="https://www.linkedin.com/in/maheen-chaudry/"
                   target="_blank"
@@ -235,10 +235,12 @@ export default function ContactPage() {
                 >
                   <FaLinkedinIn className="text-xl" />
                 </a>
+
               </div>
 
               {/* RESPONSE + RESUME */}
               <div className="mt-6 flex flex-col items-start gap-4 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+
                 <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-300">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
                   <span>Usually replies within 24 hours</span>
@@ -252,6 +254,7 @@ export default function ContactPage() {
                   Download Resume
                   <span className="ml-2">↓</span>
                 </a>
+
               </div>
             </div>
           </div>
@@ -313,6 +316,7 @@ export default function ContactPage() {
                     className={inputClass}
                   />
                 </div>
+
               </div>
 
               {/* PHONE */}
@@ -356,6 +360,7 @@ export default function ContactPage() {
                     <option value="" disabled>
                       Select project type
                     </option>
+
                     <option value="Website">Website</option>
                     <option value="Web Application">Web Application</option>
                     <option value="E-commerce">E-commerce</option>
@@ -399,6 +404,7 @@ export default function ContactPage() {
                       <option value="" disabled>
                         Select budget
                       </option>
+
                       <option value="Under $300">Under $300</option>
                       <option value="$300 - $500">$300 - $500</option>
                       <option value="$500 - $1,000">$500 - $1,000</option>
@@ -435,6 +441,7 @@ export default function ContactPage() {
                       <option value="" disabled>
                         Select timeline
                       </option>
+
                       <option value="ASAP">ASAP</option>
                       <option value="1 - 2 Weeks">1 - 2 Weeks</option>
                       <option value="2 - 4 Weeks">2 - 4 Weeks</option>
@@ -448,6 +455,7 @@ export default function ContactPage() {
                     </span>
                   </div>
                 </div>
+
               </div>
 
               {/* SUBJECT */}
@@ -517,6 +525,7 @@ export default function ContactPage() {
                   {status}
                 </div>
               )}
+
             </form>
           </div>
         </div>
@@ -525,6 +534,7 @@ export default function ContactPage() {
         <p className="mt-8 text-center text-xs text-slate-500 dark:text-slate-300 sm:text-sm">
           I&apos;ll get back to you as soon as possible.
         </p>
+
       </div>
     </main>
   );

@@ -7,7 +7,6 @@ export default function About() {
       className="relative overflow-hidden bg-white px-4 pt-7 pb-7 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-9 md:px-10 lg:pt-11 lg:pb-11"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
-
         {/* Section Heading */}
         <div className="mb-5 text-left sm:mb-7">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white sm:text-xs">
@@ -17,46 +16,65 @@ export default function About() {
           <h2 className="py-1 text-3xl font-extrabold leading-tight tracking-tight text-[#08bff5] sm:text-4xl md:text-5xl">
             About Me
           </h2>
-
-          <div className="mt-3 h-[2px] w-32 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:w-40 md:w-48" />
         </div>
 
         {/* Main Content */}
         <div className="grid items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
-
           {/* Left Content */}
           <div className="w-full text-left">
-
             <h2 className="text-xl font-semibold sm:text-2xl md:text-3xl">
               <span className="text-white">
                 Turning ideas into digital experiences.
               </span>
             </h2>
 
+            {/* Paragraph 1 */}
             <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-300 sm:text-base sm:leading-8">
-              I&apos;m a Full Stack Developer passionate about building modern,
-              responsive, and user-friendly web applications. I enjoy turning
-              ideas and designs into clean, functional, and scalable digital
-              experiences. I work across both frontend and backend development,
-              creating seamless user interfaces, RESTful APIs, and efficient
+              I&apos;m a{" "}
+              <span className="font-semibold text-cyan-600 dark:text-cyan-400">
+                Full Stack Developer
+              </span>{" "}
+              passionate about building{" "}
+              <span className="font-medium text-blue-600 dark:text-blue-300">
+                modern, responsive, and user-friendly
+              </span>{" "}
+              web applications. I enjoy turning ideas and designs into{" "}
+              <span className="font-medium text-violet-600 dark:text-violet-300">
+                clean, functional, and scalable
+              </span>{" "}
+              digital experiences. I work across both{" "}
+              <span className="font-medium text-blue-600 dark:text-blue-300">
+                frontend and backend development
+              </span>
+              , creating seamless user interfaces, RESTful APIs, and efficient
               database-driven solutions.
             </p>
 
+            {/* Paragraph 2 */}
             <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-              I work with modern technologies like React, Next.js,
-              TypeScript and Tailwind CSS, while continuously learning
-              and improving my development skills.
+              I work with modern technologies like{" "}
+              <span className="font-semibold text-violet-600 dark:text-violet-300">
+                React, Next.js, TypeScript and Tailwind CSS
+              </span>
+              , while continuously learning and improving my development
+              skills.
             </p>
 
+            {/* Paragraph 3 */}
             <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-              My goal is to build websites that are not only visually
-              appealing but also easy to use, responsive and reliable
+              My goal is to build websites that are not only{" "}
+              <span className="font-medium text-blue-600 dark:text-blue-300">
+                visually appealing
+              </span>{" "}
+              but also{" "}
+              <span className="font-medium text-cyan-600 dark:text-cyan-300">
+                easy to use, responsive and reliable
+              </span>{" "}
               across different devices.
             </p>
 
             {/* Stats */}
             <div className="mt-5 grid max-w-xl grid-cols-2 gap-3 sm:mt-6 sm:gap-4">
-
               {/* Experience */}
               <div className="rounded-2xl border border-slate-200 bg-white/70 p-4 backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 dark:border-white/10 dark:bg-white/[0.04]">
                 <p className="text-2xl font-bold text-cyan-500 dark:text-cyan-400 sm:text-3xl">
@@ -78,25 +96,21 @@ export default function About() {
                   Projects Built
                 </p>
               </div>
-
             </div>
           </div>
 
           {/* Right Card */}
           <div className="relative w-full lg:mx-auto">
-
             {/* Glow */}
             <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-cyan-400/10 via-blue-500/10 to-violet-500/10 blur-3xl" />
 
             {/* Card */}
             <div className="relative w-full overflow-hidden rounded-3xl border border-slate-200/80 bg-white/90 p-4 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-[#111111]/95 sm:p-5">
-
               {/* Top Gradient Line */}
               <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
               {/* Header */}
               <div className="flex items-center justify-between">
-
                 {/* Code Icon */}
                 <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-500 shadow-[0_0_25px_rgba(34,211,238,0.12)] dark:text-cyan-400">
                   <FiCode className="text-base" />
@@ -107,7 +121,6 @@ export default function About() {
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
                   My Approach
                 </div>
-
               </div>
 
               {/* Intro */}
@@ -131,7 +144,6 @@ export default function About() {
 
               {/* Approach Items */}
               <div className="space-y-2.5">
-
                 {/* 01 */}
                 <div className="group rounded-xl border border-slate-200 bg-slate-50 p-2.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/30 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.07]">
                   <div className="flex items-center gap-2.5">
@@ -188,12 +200,10 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-
               </div>
 
               {/* Code Box */}
               <div className="mt-3 overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-white/[0.06]">
-
                 {/* Code Header */}
                 <div className="flex items-center gap-1.5 border-b border-slate-200 px-2.5 py-1.5 dark:border-white/10">
                   <span className="h-1.5 w-1.5 rounded-full bg-red-400" />
@@ -210,12 +220,10 @@ export default function About() {
                   </span>
                   ;
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

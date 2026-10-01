@@ -11,10 +11,10 @@ import {
 type Project = {
   title: string;
   category: string;
-  description: string;
+  description: React.ReactNode;
   technologies: string[];
-  features: string[];
-  role: string;
+  features: React.ReactNode[];
+  role: React.ReactNode;
   github?: string;
   live?: string;
 };
@@ -23,8 +23,23 @@ const projects: Project[] = [
   {
     title: "PavilionCC",
     category: "Sports Club Management",
-    description:
-      "A white-label, multi-tenant sports club management platform with customizable branding, responsive interfaces and scalable backend services.",
+    description: (
+      <>
+        A{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          white-label, multi-tenant
+        </span>{" "}
+        sports club management platform with{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          customizable branding
+        </span>
+        , responsive interfaces and{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          scalable backend services
+        </span>
+        .
+      </>
+    ),
     technologies: [
       "Next.js",
       "TypeScript",
@@ -37,20 +52,67 @@ const projects: Project[] = [
       "Swagger",
     ],
     features: [
-      "Multi-tenant architecture",
-      "Customizable club branding",
-      "Responsive user interface",
-      "Scalable backend services",
-      "RESTful API integration",
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Multi-tenant architecture
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Customizable club branding
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          Responsive user interface
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Scalable backend services
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          RESTful API integration
+        </span>
+      </>,
     ],
-    role:
-      "Worked on frontend and backend development, API integration and application functionality.",
+    role: (
+      <>
+        Worked on{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          frontend and backend development
+        </span>
+        , API integration and{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          application functionality
+        </span>
+        .
+      </>
+    ),
   },
+
   {
     title: "Facilifi",
     category: "Asset Management",
-    description:
-      "An asset management system designed to manage the complete asset lifecycle, including creating, assigning, transferring and retiring assets with role-based workflows.",
+    description: (
+      <>
+        An{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          asset management system
+        </span>{" "}
+        designed to manage the complete{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          asset lifecycle
+        </span>
+        , including creating, assigning, transferring and retiring assets with{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          role-based workflows
+        </span>
+        .
+      </>
+    ),
     technologies: [
       "React",
       "Redux",
@@ -61,20 +123,63 @@ const projects: Project[] = [
       "RBAC",
     ],
     features: [
-      "Asset lifecycle management",
-      "Role-based access control",
-      "Asset assignment and transfer",
-      "Structured management workflows",
-      "REST API integration",
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Asset lifecycle management
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Role-based access control
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          Asset assignment and transfer
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Structured management workflows
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          REST API integration
+        </span>
+      </>,
     ],
-    role:
-      "Contributed to frontend development, API integration and implementation of application features.",
+    role: (
+      <>
+        Contributed to{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          frontend development
+        </span>
+        , API integration and implementation of{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          application features
+        </span>
+        .
+      </>
+    ),
   },
+
   {
     title: "Chrono Task",
     category: "Productivity",
-    description:
-      "A modern task management application designed to help users organize daily tasks through a simple, responsive and intuitive interface.",
+    description: (
+      <>
+        A{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          modern task management application
+        </span>{" "}
+        designed to help users organize daily tasks through a{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          simple, responsive
+        </span>{" "}
+        and intuitive interface.
+      </>
+    ),
     technologies: [
       "React",
       "Next.js",
@@ -82,20 +187,67 @@ const projects: Project[] = [
       "Tailwind CSS",
     ],
     features: [
-      "Task management",
-      "Responsive interface",
-      "Simple task organization",
-      "Modern UI design",
-      "User-friendly experience",
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Task management
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Responsive interface
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          Simple task organization
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Modern UI design
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          User-friendly experience
+        </span>
+      </>,
     ],
-    role:
-      "Developed the frontend interface and implemented task management functionality.",
+    role: (
+      <>
+        Developed the{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          frontend interface
+        </span>{" "}
+        and implemented{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          task management functionality
+        </span>
+        .
+      </>
+    ),
   },
+
   {
     title: "Contact Management System",
     category: "Management",
-    description:
-      "A contact management application for organizing users and contact information with a structured interface, database and management features.",
+    description: (
+      <>
+        A{" "}
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          contact management application
+        </span>{" "}
+        for organizing users and contact information with a{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          structured interface
+        </span>
+        , database and{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          management features
+        </span>
+        .
+      </>
+    ),
     technologies: [
       "React",
       "Node.js",
@@ -103,21 +255,51 @@ const projects: Project[] = [
       "MongoDB",
     ],
     features: [
-      "Contact management",
-      "Create and manage contacts",
-      "MongoDB database integration",
-      "REST API functionality",
-      "Responsive interface",
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          Contact management
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Create and manage contacts
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          MongoDB database integration
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-cyan-600 dark:text-cyan-300">
+          REST API functionality
+        </span>
+      </>,
+      <>
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          Responsive interface
+        </span>
+      </>,
     ],
-    role:
-      "Worked on frontend development, backend APIs and MongoDB database integration.",
+    role: (
+      <>
+        Worked on{" "}
+        <span className="font-medium text-blue-600 dark:text-blue-300">
+          frontend development
+        </span>
+        , backend APIs and{" "}
+        <span className="font-medium text-violet-600 dark:text-violet-300">
+          MongoDB database integration
+        </span>
+        .
+      </>
+    ),
   },
 ];
 
 export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(
-    null
-  );
+  const [selectedProject, setSelectedProject] =
+    useState<Project | null>(null);
 
   const closeModal = () => {
     setSelectedProject(null);
@@ -129,7 +311,6 @@ export default function ProjectsPage() {
       className="relative overflow-hidden bg-white px-4 pt-7 pb-10 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-12 md:px-10 lg:pt-11 lg:pb-14"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
-
         {/* SECTION HEADING */}
         <div className="mb-6 text-left sm:mb-8">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white sm:text-xs">
@@ -137,14 +318,19 @@ export default function ProjectsPage() {
           </p>
 
           <h2 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
-            Selected Projects
+            Things I've built
           </h2>
 
-          {/* UNDERLINE */}
-<div className="mt-3 h-[2px] w-full max-w-[230px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-            A selection of projects I have worked on using modern
-            technologies and clean development practices.
+            A selection of projects I have worked on using{" "}
+            <span className="font-medium text-cyan-600 dark:text-cyan-300">
+              modern technologies
+            </span>{" "}
+            and{" "}
+            <span className="font-medium text-violet-600 dark:text-violet-300">
+              clean development practices
+            </span>
+            .
           </p>
         </div>
 
@@ -210,134 +396,151 @@ export default function ProjectsPage() {
         >
           {/* MODAL BOX */}
           <div
-            className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl dark:border-white/10 dark:bg-[#111111] sm:p-7"
+            className="relative flex max-h-[90vh] w-full max-w-2xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl dark:border-white/10 dark:bg-[#111111] sm:max-h-[85vh]"
             onClick={(event) => event.stopPropagation()}
           >
             {/* TOP GRADIENT */}
-            <div className="absolute left-0 right-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
+            <div className="absolute left-0 right-0 top-0 z-20 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500" />
 
-            {/* CLOSE BUTTON */}
-            <button
-              type="button"
-              onClick={closeModal}
-              aria-label="Close project details"
-              className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:text-cyan-500 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
-            >
-              <FiX className="text-lg" />
-            </button>
-
-            {/* MODAL HEADER */}
-            <div className="pr-12">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
-                {selectedProject.category}
-              </p>
-
-              <h2 className="mt-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-2xl font-extrabold tracking-tight text-transparent sm:text-3xl">
-                {selectedProject.title}
-              </h2>
-            </div>
-
-            {/* DIVIDER */}
-            <div className="my-5 h-px bg-slate-200 dark:bg-white/10" />
-
-            {/* ABOUT PROJECT */}
-            <div>
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                About the Project
-              </h3>
-
-              <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base">
-                {selectedProject.description}
-              </p>
-            </div>
-
-            {/* KEY FEATURES */}
-            <div className="mt-6">
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                Key Features
-              </h3>
-
-              <div className="mt-3 space-y-2">
-                {selectedProject.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 dark:border-white/10 dark:bg-white/[0.04]"
-                  >
-                    <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
-
-                    <p className="text-sm leading-6 text-slate-600 dark:text-slate-200">
-                      {feature}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* TECHNOLOGIES */}
-            <div className="mt-6">
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                Technologies
-              </h3>
-
-              <div className="mt-3 flex flex-wrap gap-2">
-                {selectedProject.technologies.map((technology) => (
-                  <span
-                    key={technology}
-                    className="cursor-pointer rounded-lg border border-cyan-400/20 bg-cyan-400/10 px-3 py-1.5 text-xs font-medium text-cyan-600 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 dark:text-cyan-300"
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* MY ROLE */}
-            <div className="mt-6">
-              <h3 className="text-base font-bold text-slate-900 dark:text-white">
-                My Role
-              </h3>
-
-              <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200">
-                {selectedProject.role}
-              </p>
-            </div>
-
-            {/* ACTION BUTTONS */}
-            <div className="mt-7 flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row">
-              {/* GITHUB */}
-              {selectedProject.github && (
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-200 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
-                >
-                  <FiGithub />
-                  GitHub
-                </a>
-              )}
-
-              {/* LIVE DEMO */}
-              {selectedProject.live && (
-                <a
-                  href={selectedProject.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300"
-                >
-                  <FiExternalLink />
-                  Live Demo
-                </a>
-              )}
-
-              {/* CLOSE */}
+            {/* STICKY HEADER */}
+            <div className="relative z-10 shrink-0 border-b border-slate-200 bg-white px-5 pb-4 pt-5 dark:border-white/10 dark:bg-[#111111] sm:px-7 sm:pb-5 sm:pt-6">
+              {/* CLOSE BUTTON */}
               <button
                 type="button"
                 onClick={closeModal}
-                className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
+                aria-label="Close project details"
+                className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:text-cyan-500 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
               >
-                Close
+                <FiX className="text-lg" />
               </button>
+
+              {/* MODAL HEADER */}
+              <div className="pr-12">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400">
+                  {selectedProject.category}
+                </p>
+
+                <h2 className="mt-2 bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-2xl font-extrabold tracking-tight text-transparent sm:text-3xl">
+                  {selectedProject.title}
+                </h2>
+              </div>
+            </div>
+
+            {/* SCROLLABLE CONTENT */}
+            <div className="overflow-y-auto px-5 py-5 sm:px-7 sm:py-6">
+              {/* ABOUT PROJECT */}
+              <div>
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  About the Project
+                </h3>
+
+                <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base">
+                  {selectedProject.description}
+                </p>
+              </div>
+
+              {/* KEY FEATURES */}
+              <div className="mt-6">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  Key Features
+                </h3>
+
+                <div className="mt-3 space-y-2">
+                  {selectedProject.features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2.5 dark:border-white/10 dark:bg-white/[0.04]"
+                    >
+                      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
+
+                      <p className="text-sm leading-6 text-slate-600 dark:text-slate-200">
+                        {feature}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* TECHNOLOGIES */}
+              <div className="mt-6">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  Technologies
+                </h3>
+
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {selectedProject.technologies.map(
+                    (technology, index) => {
+                      const technologyColors = [
+                        "border-cyan-400/30 bg-cyan-400/10 text-cyan-600 hover:border-cyan-400/50 hover:bg-cyan-400/15 dark:text-cyan-300",
+                        "border-blue-400/30 bg-blue-400/10 text-blue-600 hover:border-blue-400/50 hover:bg-blue-400/15 dark:text-blue-300",
+                        "border-violet-400/30 bg-violet-400/10 text-violet-600 hover:border-violet-400/50 hover:bg-violet-400/15 dark:text-violet-300",
+                      ];
+
+                      return (
+                        <span
+                          key={technology}
+                          className={`cursor-pointer rounded-lg border px-3 py-1.5 text-xs font-medium transition-all duration-300 hover:-translate-y-0.5 ${
+                            technologyColors[
+                              index % technologyColors.length
+                            ]
+                          }`}
+                        >
+                          {technology}
+                        </span>
+                      );
+                    }
+                  )}
+                </div>
+              </div>
+
+              {/* MY ROLE */}
+              <div className="mt-6">
+                <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  My Role
+                </h3>
+
+                <p className="mt-2 text-sm leading-7 text-slate-500 dark:text-slate-200">
+                  {selectedProject.role}
+                </p>
+              </div>
+
+              {/* ACTION BUTTONS */}
+              <div className="mt-7 flex flex-col gap-3 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row">
+                {/* GITHUB */}
+                {selectedProject.github && (
+                  <a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-5 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-200 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
+                  >
+                    <FiGithub />
+                    GitHub
+                  </a>
+                )}
+
+                {/* LIVE DEMO */}
+                {selectedProject.live && (
+                  <a
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-300"
+                  >
+                    <FiExternalLink />
+                    Live Demo
+                  </a>
+                )}
+
+                {/* CLOSE */}
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="inline-flex cursor-pointer items-center justify-center rounded-xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-600 transition-all duration-300 hover:border-cyan-400/40 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:border-cyan-400/40 dark:hover:text-cyan-400"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -57,7 +57,6 @@ export default function Skills() {
       className="relative overflow-hidden bg-white px-4 pt-7 pb-10 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-12 md:px-10 lg:pt-11 lg:pb-14"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
-
         {/* Section Heading */}
         <div className="mb-6 text-left sm:mb-8">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white sm:text-xs">
@@ -68,11 +67,20 @@ export default function Skills() {
             My Skills
           </h2>
 
-          <div className="mt-3 h-[2px] w-32 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:w-40 md:w-48" />
-
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-white sm:text-base sm:leading-8">
-            Technologies and tools I use to build modern, responsive and
-            scalable web applications.
+            Technologies and tools I use to build{" "}
+            <span className="font-medium text-cyan-600 dark:text-cyan-400">
+              modern
+            </span>
+            ,{" "}
+            <span className="font-medium text-blue-600 dark:text-blue-300">
+              responsive
+            </span>{" "}
+            and{" "}
+            <span className="font-medium text-violet-600 dark:text-violet-300">
+              scalable
+            </span>{" "}
+            web applications.
           </p>
         </div>
 
@@ -83,7 +91,6 @@ export default function Skills() {
               key={category.title}
               className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6"
             >
-
               {/* Top Gradient Line */}
               <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -110,20 +117,28 @@ export default function Skills() {
 
               {/* Skills */}
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="cursor-pointer rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] font-medium text-slate-600 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/50 hover:bg-cyan-50 hover:text-cyan-700 dark:border-white/10 dark:bg-white/[0.04] dark:text-white dark:hover:border-cyan-400/40 dark:hover:bg-cyan-400/10 dark:hover:text-cyan-300 sm:px-3 sm:py-2 sm:text-xs"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+                {category.skills.map((skill, index) => {
+                  const skillColors = [
+                    "border-cyan-400/30 bg-cyan-400/10 text-cyan-600 hover:border-cyan-400/50 hover:bg-cyan-400/15 dark:text-cyan-300",
+                    "border-blue-400/30 bg-blue-400/10 text-blue-600 hover:border-blue-400/50 hover:bg-blue-400/15 dark:text-blue-300",
+                    "border-violet-400/30 bg-violet-400/10 text-violet-600 hover:border-violet-400/50 hover:bg-violet-400/15 dark:text-violet-300",
+                  ];
 
+                  return (
+                    <span
+                      key={skill}
+                      className={`cursor-pointer rounded-lg border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-300 hover:-translate-y-0.5 sm:px-3 sm:py-2 sm:text-xs ${
+                        skillColors[index % skillColors.length]
+                      }`}
+                    >
+                      {skill}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

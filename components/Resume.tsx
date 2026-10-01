@@ -17,8 +17,6 @@ export default function Resume() {
             Professional Profile
           </h2>
 
-        {/* UNDERLINE */}
-<div className="mt-3 h-[2px] w-full max-w-[220px] rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 sm:max-w-[270px]" />
           <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             Explore my experience, technical skills, education and
             professional background through my complete resume.
