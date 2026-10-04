@@ -11,48 +11,28 @@ export default function Experience() {
   const responsibilities = [
     {
       text: (
-        <>
-          Contributed to the development and maintenance of{" "}
-          <span className="font-medium text-blue-600 dark:text-blue-300">
-            full-stack web applications
-          </span>
-          , collaborating with senior engineers to deliver{" "}
-          <span className="font-medium text-cyan-600 dark:text-cyan-300">
-            scalable and reliable solutions
-          </span>
-          .
-        </>
+       <>
+  Contributed to the development and maintenance of full-stack web
+  applications, collaborating with senior engineers to deliver scalable and
+  reliable solutions.
+</>
       ),
     },
     {
       text: (
-        <>
-          Participated in{" "}
-          <span className="font-medium text-violet-600 dark:text-violet-300">
-            application design discussions
-          </span>
-          , progress demonstrations, and{" "}
-          <span className="font-medium text-blue-600 dark:text-blue-300">
-            Agile ceremonies
-          </span>{" "}
-          while working with cross-functional teams.
-        </>
+       <>
+  Participated in application design discussions, progress demonstrations, and
+  Agile ceremonies while working with cross-functional teams.
+</>
       ),
     },
     {
       text: (
-        <>
-          Assisted in developing and integrating{" "}
-          <span className="font-medium text-cyan-600 dark:text-cyan-300">
-            APIs
-          </span>
-          , implementing new functionality, and resolving technical issues to
-          improve{" "}
-          <span className="font-medium text-violet-600 dark:text-violet-300">
-            application performance and user experience
-          </span>
-          .
-        </>
+      <>
+  Assisted in developing and integrating APIs, implementing new functionality,
+  and resolving technical issues to improve application performance and user
+  experience.
+</>
       ),
     },
   ];

@@ -28,21 +28,10 @@ const projects: Project[] = [
     category: "Sports Club Management",
 
     description: (
-      <>
-        A{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          white-label, multi-tenant
-        </span>{" "}
-        sports club management platform with{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          customizable branding
-        </span>
-        , responsive interfaces and{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          scalable backend services
-        </span>
-        .
-      </>
+    <>
+  A white-label, multi-tenant sports club management platform with customizable
+  branding, responsive interfaces and scalable backend services.
+</>
     ),
 
     technologies: [
@@ -143,26 +132,14 @@ const projects: Project[] = [
 
     impact: [
       <>
-        Built a{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          scalable multi-club platform
-        </span>{" "}
-        with isolated tenant data.
-      </>,
-      <>
-        Improved club management through{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          centralized digital workflows
-        </span>
-        .
-      </>,
-      <>
-        Delivered a{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          responsive and customizable experience
-        </span>{" "}
-        for different clubs.
-      </>,
+  Built a scalable multi-club platform with isolated tenant data.
+</>,
+<>
+  Improved club management through centralized digital workflows.
+</>,
+<>
+  Delivered a responsive and customizable experience for different clubs.
+</>,
     ],
   },
 
@@ -171,21 +148,11 @@ const projects: Project[] = [
     category: "Asset Management",
 
     description: (
-      <>
-        An{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          asset management system
-        </span>{" "}
-        designed to manage the complete{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          asset lifecycle
-        </span>
-        , including creating, assigning, transferring and retiring assets with{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          role-based workflows
-        </span>
-        .
-      </>
+     <>
+  An asset management system designed to manage the complete asset lifecycle,
+  including creating, assigning, transferring and retiring assets with
+  role-based workflows.
+</>
     ),
 
     technologies: [
@@ -281,27 +248,15 @@ const projects: Project[] = [
     ],
 
     impact: [
-      <>
-        Improved visibility across the{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          complete asset lifecycle
-        </span>
-        .
-      </>,
-      <>
-        Supported more controlled asset operations through{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          role-based workflows
-        </span>
-        .
-      </>,
-      <>
-        Provided a centralized interface for{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          asset management
-        </span>
-        .
-      </>,
+     <>
+  Improved visibility across the complete asset lifecycle.
+</>,
+<>
+  Supported more controlled asset operations through role-based workflows.
+</>,
+<>
+  Provided a centralized interface for asset management.
+</>,
     ],
   },
 
@@ -310,17 +265,10 @@ const projects: Project[] = [
     category: "Productivity",
 
     description: (
-      <>
-        A{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          modern task management application
-        </span>{" "}
-        designed to help users organize daily tasks through a{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          simple, responsive
-        </span>{" "}
-        and intuitive interface.
-      </>
+     <>
+  A modern task management application designed to help users organize daily
+  tasks through a simple, responsive and intuitive interface.
+</>
     ),
 
     technologies: [
@@ -405,27 +353,15 @@ const projects: Project[] = [
     ],
 
     impact: [
-      <>
-        Provided a{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          simple task organization
-        </span>{" "}
-        experience.
-      </>,
-      <>
-        Delivered a{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          responsive interface
-        </span>{" "}
-        across devices.
-      </>,
-      <>
-        Created a clean foundation for{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          productivity-focused features
-        </span>
-        .
-      </>,
+     <>
+  Provided a simple task organization experience.
+</>,
+<>
+  Delivered a responsive interface across devices.
+</>,
+<>
+  Created a clean foundation for productivity-focused features.
+</>,
     ],
   },
 
@@ -434,21 +370,10 @@ const projects: Project[] = [
     category: "Management",
 
     description: (
-      <>
-        A{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          contact management application
-        </span>{" "}
-        for organizing users and contact information with a{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          structured interface
-        </span>
-        , database and{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          management features
-        </span>
-        .
-      </>
+     <>
+  A contact management application for organizing users and contact information
+  with a structured interface, database and management features.
+</>
     ),
 
     technologies: [
@@ -539,27 +464,15 @@ const projects: Project[] = [
     ],
 
     impact: [
-      <>
-        Provided a centralized way to{" "}
-        <span className="font-medium text-cyan-600 dark:text-cyan-300">
-          organize contact information
-        </span>
-        .
-      </>,
-      <>
-        Simplified contact operations through{" "}
-        <span className="font-medium text-blue-600 dark:text-blue-300">
-          structured workflows
-        </span>
-        .
-      </>,
-      <>
-        Created a full-stack application using{" "}
-        <span className="font-medium text-violet-600 dark:text-violet-300">
-          React, Node.js and MongoDB
-        </span>
-        .
-      </>,
+     <>
+  Provided a centralized way to organize contact information.
+</>,
+<>
+  Simplified contact operations through structured workflows.
+</>,
+<>
+  Created a full-stack application using React, Node.js and MongoDB.
+</>,
     ],
   },
 ];

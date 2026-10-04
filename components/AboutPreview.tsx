@@ -28,51 +28,33 @@ export default function About() {
               </span>
             </h2>
 
-            {/* Paragraph 1 */}
-            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-300 sm:text-base sm:leading-8">
-              I&apos;m a{" "}
-              <span className="font-semibold text-cyan-600 dark:text-cyan-400">
-                Full Stack Developer
-              </span>{" "}
-              passionate about building{" "}
-              <span className="font-medium text-blue-600 dark:text-blue-300">
-                modern, responsive, and user-friendly
-              </span>{" "}
-              web applications. I enjoy turning ideas and designs into{" "}
-              <span className="font-medium text-violet-600 dark:text-violet-300">
-                clean, functional, and scalable
-              </span>{" "}
-              digital experiences. I work across both{" "}
-              <span className="font-medium text-blue-600 dark:text-blue-300">
-                frontend and backend development
-              </span>
-              , creating seamless user interfaces, RESTful APIs, and efficient
-              database-driven solutions.
-            </p>
+       {/* Paragraph 1 */}
+<p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-300 sm:text-base sm:leading-8">
+  I&apos;m a{" "}
+  <span className="font-semibold text-cyan-600 dark:text-cyan-400">
+    Full Stack Developer
+  </span>{" "}
+  passionate about building modern, responsive, and user-friendly web
+  applications. I enjoy turning ideas and designs into clean, functional,
+  and scalable digital experiences. I work across both frontend and backend
+  development, creating seamless user interfaces,{" "}
+  <span className="font-semibold text-cyan-600 dark:text-cyan-400">
+    RESTful APIs
+  </span>
+  , and efficient database-driven solutions.
+</p>
 
-            {/* Paragraph 2 */}
-            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-              I work with modern technologies like{" "}
-              <span className="font-semibold text-violet-600 dark:text-violet-300">
-                React, Next.js, TypeScript and Tailwind CSS
-              </span>
-              , while continuously learning and improving my development
-              skills.
-            </p>
+{/* Paragraph 2 */}
+<p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
+  I work with modern technologies like React, Next.js, TypeScript and Tailwind
+  CSS, while continuously learning and improving my development skills.
+</p>
 
-            {/* Paragraph 3 */}
-            <p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-              My goal is to build websites that are not only{" "}
-              <span className="font-medium text-blue-600 dark:text-blue-300">
-                visually appealing
-              </span>{" "}
-              but also{" "}
-              <span className="font-medium text-cyan-600 dark:text-cyan-300">
-                easy to use, responsive and reliable
-              </span>{" "}
-              across different devices.
-            </p>
-
+{/* Paragraph 3 */}
+<p className="mt-3 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
+  My goal is to build websites that are not only visually appealing but also
+  easy to use, responsive and reliable across different devices.
+</p>
             {/* Stats */}
             <div className="mt-5 grid max-w-xl grid-cols-2 gap-3 sm:mt-6 sm:gap-4">
               {/* Experience */}

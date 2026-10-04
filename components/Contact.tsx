@@ -1,4 +1,3 @@
-
 "use client";
 
 import { FormEvent, useState } from "react";
@@ -6,10 +5,157 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";
 
+type DropdownType = "projectType" | "budget" | "timeline";
+
+type CustomDropdownProps = {
+  label: string;
+  field: DropdownType;
+  value: string;
+  options: string[];
+  placeholder: string;
+  openDropdown: DropdownType | null;
+  setOpenDropdown: (value: DropdownType | null) => void;
+  onChange: (field: DropdownType, value: string) => void;
+};
+
+function CustomDropdown({
+  label,
+  field,
+  value,
+  options,
+  placeholder,
+  openDropdown,
+  setOpenDropdown,
+  onChange,
+}: CustomDropdownProps) {
+  const isOpen = openDropdown === field;
+
+  return (
+    <div>
+      {/* LABEL */}
+      <label className="mb-2 block text-sm font-medium text-slate-900 dark:text-white">
+        {label}{" "}
+        <span className="text-xs font-normal text-slate-500 dark:text-slate-400">
+          (Optional)
+        </span>
+      </label>
+
+      <div className="relative">
+        {/* DROPDOWN BUTTON */}
+        <button
+          type="button"
+          onClick={() => setOpenDropdown(isOpen ? null : field)}
+          className={`flex w-full cursor-pointer items-center justify-between rounded-xl border px-4 py-3.5 text-left text-sm outline-none transition-all duration-300 ${
+            isOpen
+              ? "border-cyan-400/60 ring-4 ring-cyan-400/10"
+              : "border-slate-200 dark:border-white/10"
+          } bg-slate-50 text-slate-900 hover:border-cyan-400/40 dark:bg-[#111111] dark:text-white`}
+        >
+          <span
+            className={
+              value
+                ? "text-slate-900 dark:text-white"
+                : "text-slate-400 dark:text-slate-500"
+            }
+          >
+            {value || placeholder}
+          </span>
+
+          <span
+            className={`ml-3 shrink-0 text-cyan-400 transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          >
+            ▾
+          </span>
+        </button>
+
+        {/* DROPDOWN OPTIONS */}
+        {isOpen && (
+          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-60 overflow-y-auto rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-white/10 dark:bg-[#111111]">
+            {options.map((option) => {
+              const isSelected = value === option;
+
+              return (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => onChange(field, option)}
+                  className={`block w-full cursor-pointer rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                    isSelected
+                      ? "bg-cyan-400/10 text-cyan-600 dark:text-cyan-400"
+                      : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/[0.06]"
+                  }`}
+                >
+                  {option}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
+        {/* HIDDEN INPUT FOR FORMDATA */}
+        <input type="hidden" name={field} value={value} />
+      </div>
+    </div>
+  );
+}
+
 export default function ContactPage() {
   const [isSending, setIsSending] = useState(false);
   const [status, setStatus] = useState("");
   const [copied, setCopied] = useState(false);
+
+  // Custom dropdown state
+  const [openDropdown, setOpenDropdown] =
+    useState<DropdownType | null>(null);
+
+  const [formValues, setFormValues] = useState({
+    projectType: "",
+    budget: "",
+    timeline: "",
+  });
+
+  const projectTypeOptions = [
+    "Website",
+    "Web Application",
+    "E-commerce",
+    "Portfolio Website",
+    "Landing Page",
+    "Frontend Development",
+    "Full Stack Development",
+    "Other",
+  ];
+
+  const budgetOptions = [
+    "Under $300",
+    "$300 - $500",
+    "$500 - $1,000",
+    "$1,000 - $2,000",
+    "$2,000+",
+    "Not sure yet",
+  ];
+
+  const timelineOptions = [
+    "ASAP",
+    "1 - 2 Weeks",
+    "2 - 4 Weeks",
+    "1 - 2 Months",
+    "2+ Months",
+    "Flexible",
+  ];
+
+  const handleDropdownChange = (
+    field: DropdownType,
+    value: string
+  ) => {
+    setFormValues((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+
+    setOpenDropdown(null);
+  };
 
   const copyEmail = async () => {
     try {
@@ -29,6 +175,7 @@ export default function ContactPage() {
 
     setIsSending(true);
     setStatus("");
+    setOpenDropdown(null);
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -60,7 +207,16 @@ export default function ContactPage() {
       }
 
       setStatus("Message sent successfully!");
+
+      // Reset form fields
       form.reset();
+
+      // Reset custom dropdowns
+      setFormValues({
+        projectType: "",
+        budget: "",
+        timeline: "",
+      });
     } catch (error) {
       console.error(error);
       setStatus("Something went wrong. Please try again.");
@@ -71,9 +227,6 @@ export default function ContactPage() {
 
   const inputClass =
     "w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]";
-
-  const selectClass =
-    "w-full cursor-pointer appearance-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:focus:bg-white/[0.05]";
 
   return (
     <main
@@ -235,7 +388,6 @@ export default function ContactPage() {
                 >
                   <FaLinkedinIn className="text-xl" />
                 </a>
-
               </div>
 
               {/* RESPONSE + RESUME */}
@@ -254,13 +406,12 @@ export default function ContactPage() {
                   Download Resume
                   <span className="ml-2">↓</span>
                 </a>
-
               </div>
             </div>
           </div>
 
           {/* FORM */}
-          <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
+          <div className="group relative overflow-visible rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -316,7 +467,6 @@ export default function ContactPage() {
                     className={inputClass}
                   />
                 </div>
-
               </div>
 
               {/* PHONE */}
@@ -341,121 +491,43 @@ export default function ContactPage() {
               </div>
 
               {/* PROJECT TYPE */}
-              <div>
-                <label
-                  htmlFor="projectType"
-                  className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
-                >
-                  Project Type
-                </label>
-
-                <div className="relative">
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    required
-                    defaultValue=""
-                    className={selectClass}
-                  >
-                    <option value="" disabled>
-                      Select project type
-                    </option>
-
-                    <option value="Website">Website</option>
-                    <option value="Web Application">Web Application</option>
-                    <option value="E-commerce">E-commerce</option>
-                    <option value="Portfolio">Portfolio Website</option>
-                    <option value="Landing Page">Landing Page</option>
-                    <option value="Frontend Development">
-                      Frontend Development
-                    </option>
-                    <option value="Full Stack Development">
-                      Full Stack Development
-                    </option>
-                    <option value="Other">Other</option>
-                  </select>
-
-                  <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400">
-                    ▾
-                  </span>
-                </div>
-              </div>
+              <CustomDropdown
+                label="Project Type"
+                field="projectType"
+                value={formValues.projectType}
+                options={projectTypeOptions}
+                placeholder="Select project type"
+                openDropdown={openDropdown}
+                setOpenDropdown={setOpenDropdown}
+                onChange={handleDropdownChange}
+              />
 
               {/* BUDGET + TIMELINE */}
               <div className="grid gap-4 sm:grid-cols-2">
 
                 {/* BUDGET */}
-                <div>
-                  <label
-                    htmlFor="budget"
-                    className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
-                  >
-                    Budget
-                  </label>
-
-                  <div className="relative">
-                    <select
-                      id="budget"
-                      name="budget"
-                      required
-                      defaultValue=""
-                      className={selectClass}
-                    >
-                      <option value="" disabled>
-                        Select budget
-                      </option>
-
-                      <option value="Under $300">Under $300</option>
-                      <option value="$300 - $500">$300 - $500</option>
-                      <option value="$500 - $1,000">$500 - $1,000</option>
-                      <option value="$1,000 - $2,000">
-                        $1,000 - $2,000
-                      </option>
-                      <option value="$2,000+">$2,000+</option>
-                      <option value="Not sure yet">Not sure yet</option>
-                    </select>
-
-                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400">
-                      ▾
-                    </span>
-                  </div>
-                </div>
+                <CustomDropdown
+                  label="Budget"
+                  field="budget"
+                  value={formValues.budget}
+                  options={budgetOptions}
+                  placeholder="Select budget"
+                  openDropdown={openDropdown}
+                  setOpenDropdown={setOpenDropdown}
+                  onChange={handleDropdownChange}
+                />
 
                 {/* TIMELINE */}
-                <div>
-                  <label
-                    htmlFor="timeline"
-                    className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
-                  >
-                    Timeline
-                  </label>
-
-                  <div className="relative">
-                    <select
-                      id="timeline"
-                      name="timeline"
-                      required
-                      defaultValue=""
-                      className={selectClass}
-                    >
-                      <option value="" disabled>
-                        Select timeline
-                      </option>
-
-                      <option value="ASAP">ASAP</option>
-                      <option value="1 - 2 Weeks">1 - 2 Weeks</option>
-                      <option value="2 - 4 Weeks">2 - 4 Weeks</option>
-                      <option value="1 - 2 Months">1 - 2 Months</option>
-                      <option value="2+ Months">2+ Months</option>
-                      <option value="Flexible">Flexible</option>
-                    </select>
-
-                    <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-cyan-400">
-                      ▾
-                    </span>
-                  </div>
-                </div>
-
+                <CustomDropdown
+                  label="Timeline"
+                  field="timeline"
+                  value={formValues.timeline}
+                  options={timelineOptions}
+                  placeholder="Select timeline"
+                  openDropdown={openDropdown}
+                  setOpenDropdown={setOpenDropdown}
+                  onChange={handleDropdownChange}
+                />
               </div>
 
               {/* SUBJECT */}
@@ -525,7 +597,6 @@ export default function ContactPage() {
                   {status}
                 </div>
               )}
-
             </form>
           </div>
         </div>
@@ -534,7 +605,6 @@ export default function ContactPage() {
         <p className="mt-8 text-center text-xs text-slate-500 dark:text-slate-300 sm:text-sm">
           I&apos;ll get back to you as soon as possible.
         </p>
-
       </div>
     </main>
   );

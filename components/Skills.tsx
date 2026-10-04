@@ -67,21 +67,16 @@ export default function Skills() {
             My Skills
           </h2>
 
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-white sm:text-base sm:leading-8">
-            Technologies and tools I use to build{" "}
-            <span className="font-medium text-cyan-600 dark:text-cyan-400">
-              modern
-            </span>
-            ,{" "}
-            <span className="font-medium text-blue-600 dark:text-blue-300">
-              responsive
-            </span>{" "}
-            and{" "}
-            <span className="font-medium text-violet-600 dark:text-violet-300">
-              scalable
-            </span>{" "}
-            web applications.
-          </p>
+          
+<p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-white sm:text-base sm:leading-8">
+  Technologies and tools I use to build modern,{" "}
+  <span className="font-medium text-blue-600 dark:text-blue-300">
+    responsive
+  </span>{" "}
+  and scalable web applications.
+</p>
+
+
         </div>
 
         {/* Skills Grid */}
