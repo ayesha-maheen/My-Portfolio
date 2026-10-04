@@ -31,7 +31,7 @@ function CustomDropdown({
   const isOpen = openDropdown === field;
 
   return (
-    <div className="min-w-0">
+    <div className="w-full min-w-0">
       {/* LABEL */}
       <label className="mb-2 block text-sm font-medium text-slate-900 dark:text-white">
         {label}{" "}
@@ -40,7 +40,7 @@ function CustomDropdown({
         </span>
       </label>
 
-      <div className="relative min-w-0">
+      <div className="relative w-full min-w-0">
         {/* DROPDOWN BUTTON */}
         <button
           type="button"
@@ -73,7 +73,7 @@ function CustomDropdown({
 
         {/* DROPDOWN OPTIONS */}
         {isOpen && (
-          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-60 min-w-0 overflow-y-auto overflow-x-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-white/10 dark:bg-[#111111]">
+          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-60 w-full min-w-0 overflow-y-auto overflow-x-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-white/10 dark:bg-[#111111]">
             {options.map((option) => {
               const isSelected = value === option;
 
@@ -82,7 +82,7 @@ function CustomDropdown({
                   key={option}
                   type="button"
                   onClick={() => onChange(field, option)}
-                  className={`block w-full cursor-pointer truncate overflow-hidden rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                  className={`block w-full min-w-0 cursor-pointer truncate overflow-hidden rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
                     isSelected
                       ? "bg-cyan-400/10 text-cyan-600 dark:text-cyan-400"
                       : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/[0.06]"
@@ -227,40 +227,40 @@ export default function ContactPage() {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]";
+    "w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]";
 
   return (
     <main
       id="contact"
-      className="relative scroll-mt-24 overflow-hidden bg-white px-4 pb-10 pt-7 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pb-12 sm:pt-9 md:px-10 lg:pb-14 lg:pt-11"
+      className="relative w-full min-w-0 scroll-mt-24 overflow-x-hidden overflow-y-visible bg-white px-4 pb-10 pt-7 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pb-12 sm:pt-9 md:px-10 lg:pb-14 lg:pt-11"
     >
-      <div className="relative z-10 mx-auto max-w-6xl">
+      <div className="relative z-10 mx-auto w-full min-w-0 max-w-6xl">
 
         {/* SECTION HEADING */}
-        <div className="mb-6 text-left sm:mb-8">
+        <div className="mb-6 min-w-0 text-left sm:mb-8">
           <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white sm:text-xs">
             Get In Touch
           </p>
 
-          <h1 className="bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
+          <h1 className="max-w-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 bg-clip-text py-1 text-3xl font-extrabold leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl">
             Let&apos;s Connect
           </h1>
 
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
+          <p className="mt-3 max-w-2xl break-words text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
             Have a project idea, an opportunity, or simply want to say hello?
             Tell me a little about your project and I&apos;ll get back to you.
           </p>
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
+        <div className="grid min-w-0 gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
 
           {/* CONTACT INFORMATION */}
-          <div className="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
+          <div className="group relative w-full min-w-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
-            <div>
+            <div className="min-w-0">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
                 Contact Information
               </p>
@@ -269,17 +269,17 @@ export default function ContactPage() {
                 Let&apos;s work together
               </h2>
 
-              <p className="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-200">
+              <p className="mt-3 break-words text-sm leading-7 text-slate-500 dark:text-slate-200">
                 I&apos;m available for freelance projects, web applications,
                 frontend development and full-stack development opportunities.
               </p>
             </div>
 
             {/* CONTACT DETAILS */}
-            <div className="mt-6 space-y-3">
+            <div className="mt-6 min-w-0 space-y-3">
 
               {/* EMAIL */}
-              <div className="flex items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-cyan-400/40 dark:hover:bg-cyan-400/5 sm:gap-4">
+              <div className="flex min-w-0 items-center gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:border-cyan-400/40 hover:bg-cyan-50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-cyan-400/40 dark:hover:bg-cyan-400/5 sm:gap-4">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-50 text-cyan-600 dark:bg-cyan-400/10 dark:text-cyan-400">
                   <FiMail className="text-xl" />
                 </div>
@@ -313,13 +313,13 @@ export default function ContactPage() {
                 href="https://wa.me/923277132461"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group/item flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/40 hover:bg-blue-50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-blue-400/40 dark:hover:bg-blue-400/5"
+                className="group/item flex min-w-0 items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-400/40 hover:bg-blue-50 dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-blue-400/40 dark:hover:bg-blue-400/5"
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-blue-400/20 bg-blue-50 text-blue-600 dark:bg-blue-400/10 dark:text-blue-400">
                   <FiPhone className="text-xl" />
                 </div>
 
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     WhatsApp
                   </p>
@@ -331,12 +331,12 @@ export default function ContactPage() {
               </a>
 
               {/* LOCATION */}
-              <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/[0.04]">
+              <div className="flex min-w-0 items-center gap-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-white/[0.04]">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-50 text-violet-600 dark:bg-violet-400/10 dark:text-violet-400">
                   <FiMapPin className="text-xl" />
                 </div>
 
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                     Location
                   </p>
@@ -349,19 +349,19 @@ export default function ContactPage() {
             </div>
 
             {/* AVAILABILITY */}
-            <div className="mt-5 flex items-center gap-3 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 px-4 py-3">
-              <span className="relative flex h-3 w-3">
+            <div className="mt-5 flex min-w-0 items-center gap-3 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 px-4 py-3">
+              <span className="relative flex h-3 w-3 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-400" />
               </span>
 
-              <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+              <p className="min-w-0 text-sm font-medium text-slate-700 dark:text-slate-200">
                 Available for freelance projects
               </p>
             </div>
 
             {/* SOCIAL LINKS */}
-            <div className="mt-6 border-t border-slate-200 pt-5 dark:border-white/10">
+            <div className="mt-6 min-w-0 border-t border-slate-200 pt-5 dark:border-white/10">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
                 Find Me Online
               </p>
@@ -392,9 +392,9 @@ export default function ContactPage() {
               </div>
 
               {/* RESPONSE + RESUME */}
-              <div className="mt-6 flex flex-col items-start gap-4 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-6 flex min-w-0 flex-col items-start gap-4 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
 
-                <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-300">
+                <div className="flex min-w-0 items-center gap-2 text-sm text-slate-500 dark:text-slate-300">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
                   <span>Usually replies within 24 hours</span>
                 </div>
@@ -412,7 +412,7 @@ export default function ContactPage() {
           </div>
 
           {/* FORM */}
-          <div className="group relative overflow-x-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
+          <div className="group relative w-full min-w-0 overflow-x-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
@@ -424,16 +424,19 @@ export default function ContactPage() {
               Tell me about your project
             </h2>
 
-            <p className="mt-2 text-sm leading-6 text-slate-500 dark:text-slate-300">
+            <p className="mt-2 break-words text-sm leading-6 text-slate-500 dark:text-slate-300">
               Share a few details so I can better understand your requirements.
             </p>
 
-            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+            <form
+              onSubmit={handleSubmit}
+              className="mt-6 min-w-0 space-y-4"
+            >
 
               {/* NAME + EMAIL */}
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid min-w-0 gap-4 sm:grid-cols-2">
 
-                <div>
+                <div className="min-w-0">
                   <label
                     htmlFor="name"
                     className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -451,7 +454,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div>
+                <div className="min-w-0">
                   <label
                     htmlFor="email"
                     className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -471,7 +474,7 @@ export default function ContactPage() {
               </div>
 
               {/* PHONE */}
-              <div>
+              <div className="min-w-0">
                 <label
                   htmlFor="phone"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -504,7 +507,7 @@ export default function ContactPage() {
               />
 
               {/* BUDGET + TIMELINE */}
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid min-w-0 gap-4 sm:grid-cols-2">
 
                 {/* BUDGET */}
                 <CustomDropdown
@@ -532,7 +535,7 @@ export default function ContactPage() {
               </div>
 
               {/* SUBJECT */}
-              <div>
+              <div className="min-w-0">
                 <label
                   htmlFor="subject"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -553,7 +556,7 @@ export default function ContactPage() {
               </div>
 
               {/* MESSAGE */}
-              <div>
+              <div className="min-w-0">
                 <label
                   htmlFor="message"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
