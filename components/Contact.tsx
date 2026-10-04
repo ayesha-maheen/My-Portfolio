@@ -467,27 +467,29 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* FORM */}
-          <div
-            className="
-              group relative box-border w-full min-w-0
-              overflow-visible
-              rounded-3xl
-              border border-slate-200
-              bg-white/90
-              p-5
-              shadow-lg
-              transition-all duration-300
-              hover:-translate-y-1
-              hover:border-cyan-400/40
-              hover:shadow-cyan-500/10
-              dark:border-white/10
-              dark:bg-[#111111]/95
-              dark:shadow-2xl
-              sm:p-6
-            "
-          >
-            <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+         {/* FORM */}
+<div
+  className="
+    group relative box-border w-full min-w-0
+    overflow-hidden
+    rounded-3xl
+    border border-slate-200
+    bg-white/90
+    p-5
+    shadow-lg
+    transition-all duration-300
+    hover:-translate-y-1
+    hover:border-cyan-400/40
+    hover:shadow-cyan-500/10
+    dark:border-white/10
+    dark:bg-[#111111]/95
+    dark:shadow-2xl
+    sm:p-6
+  "
+>
+  <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+
+  
 
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
               Project Inquiry
