@@ -31,7 +31,7 @@ function CustomDropdown({
   const isOpen = openDropdown === field;
 
   return (
-    <div>
+    <div className="min-w-0">
       {/* LABEL */}
       <label className="mb-2 block text-sm font-medium text-slate-900 dark:text-white">
         {label}{" "}
@@ -40,29 +40,30 @@ function CustomDropdown({
         </span>
       </label>
 
-      <div className="relative">
+      <div className="relative min-w-0">
         {/* DROPDOWN BUTTON */}
         <button
           type="button"
           onClick={() => setOpenDropdown(isOpen ? null : field)}
-          className={`flex w-full cursor-pointer items-center justify-between rounded-xl border px-4 py-3.5 text-left text-sm outline-none transition-all duration-300 ${
+          className={`relative flex w-full min-w-0 cursor-pointer items-center justify-between overflow-hidden rounded-xl border px-4 py-3.5 text-left text-sm outline-none transition-all duration-300 ${
             isOpen
               ? "border-cyan-400/60 ring-4 ring-cyan-400/10"
               : "border-slate-200 dark:border-white/10"
           } bg-slate-50 text-slate-900 hover:border-cyan-400/40 dark:bg-[#111111] dark:text-white`}
         >
           <span
-            className={
+            className={`min-w-0 flex-1 truncate ${
               value
                 ? "text-slate-900 dark:text-white"
                 : "text-slate-400 dark:text-slate-500"
-            }
+            }`}
           >
             {value || placeholder}
           </span>
 
+          {/* DROPDOWN ARROW */}
           <span
-            className={`ml-3 shrink-0 text-cyan-400 transition-transform duration-300 ${
+            className={`ml-3 flex h-5 w-5 shrink-0 items-center justify-center text-cyan-400 transition-transform duration-300 ${
               isOpen ? "rotate-180" : ""
             }`}
           >
@@ -72,7 +73,7 @@ function CustomDropdown({
 
         {/* DROPDOWN OPTIONS */}
         {isOpen && (
-          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-60 overflow-y-auto rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-white/10 dark:bg-[#111111]">
+          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-60 min-w-0 overflow-y-auto overflow-x-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-white/10 dark:bg-[#111111]">
             {options.map((option) => {
               const isSelected = value === option;
 
@@ -81,7 +82,7 @@ function CustomDropdown({
                   key={option}
                   type="button"
                   onClick={() => onChange(field, option)}
-                  className={`block w-full cursor-pointer rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                  className={`block w-full cursor-pointer truncate rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
                     isSelected
                       ? "bg-cyan-400/10 text-cyan-600 dark:text-cyan-400"
                       : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/[0.06]"
