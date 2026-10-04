@@ -82,7 +82,7 @@ function CustomDropdown({
                   key={option}
                   type="button"
                   onClick={() => onChange(field, option)}
-                  className={`block w-full cursor-pointer truncate rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                  className={`block w-full cursor-pointer truncate overflow-hidden rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
                     isSelected
                       ? "bg-cyan-400/10 text-cyan-600 dark:text-cyan-400"
                       : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/[0.06]"
@@ -232,7 +232,7 @@ export default function ContactPage() {
   return (
     <main
       id="contact"
-      className="relative scroll-mt-24 overflow-hidden bg-white px-4 pt-7 pb-10 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pt-9 sm:pb-12 md:px-10 lg:pt-11 lg:pb-14"
+      className="relative scroll-mt-24 overflow-hidden bg-white px-4 pb-10 pt-7 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pb-12 sm:pt-9 md:px-10 lg:pb-14 lg:pt-11"
     >
       <div className="relative z-10 mx-auto max-w-6xl">
 
@@ -412,7 +412,7 @@ export default function ContactPage() {
           </div>
 
           {/* FORM */}
-          <div className="group relative overflow-visible rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
+          <div className="group relative overflow-x-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
 
             <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
