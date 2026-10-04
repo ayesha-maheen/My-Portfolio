@@ -44,8 +44,9 @@ function CustomDropdown({
         {/* DROPDOWN BUTTON */}
         <button
           type="button"
+          aria-expanded={isOpen}
           onClick={() => setOpenDropdown(isOpen ? null : field)}
-          className={`relative flex w-full min-w-0 cursor-pointer items-center justify-between overflow-hidden rounded-xl border px-4 py-3.5 text-left text-sm outline-none transition-all duration-300 ${
+          className={`relative flex box-border w-full min-w-0 cursor-pointer items-center justify-between rounded-xl border px-4 py-3.5 text-left text-sm outline-none transition-all duration-300 ${
             isOpen
               ? "border-cyan-400/60 ring-4 ring-cyan-400/10"
               : "border-slate-200 dark:border-white/10"
@@ -73,29 +74,39 @@ function CustomDropdown({
 
         {/* DROPDOWN OPTIONS */}
         {isOpen && (
-          <div className="absolute left-0 right-0 top-full z-50 mt-2 max-h-60 w-full min-w-0 overflow-y-auto overflow-x-hidden rounded-xl border border-slate-200 bg-white p-1.5 shadow-xl dark:border-white/10 dark:bg-[#111111]">
-            {options.map((option) => {
-              const isSelected = value === option;
+          <div
+            className="
+              absolute inset-x-0 top-full z-[100] mt-2
+              box-border w-full min-w-0
+              rounded-xl border border-slate-200
+              bg-white p-1.5 shadow-xl
+              dark:border-white/10 dark:bg-[#111111]
+            "
+          >
+            <div className="max-h-48 overflow-y-auto overscroll-contain sm:max-h-60">
+              {options.map((option) => {
+                const isSelected = value === option;
 
-              return (
-                <button
-                  key={option}
-                  type="button"
-                  onClick={() => onChange(field, option)}
-                  className={`block w-full min-w-0 cursor-pointer truncate overflow-hidden rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
-                    isSelected
-                      ? "bg-cyan-400/10 text-cyan-600 dark:text-cyan-400"
-                      : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/[0.06]"
-                  }`}
-                >
-                  {option}
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={option}
+                    type="button"
+                    onClick={() => onChange(field, option)}
+                    className={`block box-border w-full min-w-0 cursor-pointer truncate rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-200 ${
+                      isSelected
+                        ? "bg-cyan-400/10 text-cyan-600 dark:text-cyan-400"
+                        : "text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-white/[0.06]"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         )}
 
-        {/* HIDDEN INPUT FOR FORMDATA */}
+        {/* HIDDEN INPUT */}
         <input type="hidden" name={field} value={value} />
       </div>
     </div>
@@ -160,7 +171,10 @@ export default function ContactPage() {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("ayeshamaheen348@gmail.com");
+      await navigator.clipboard.writeText(
+        "ayeshamaheen348@gmail.com"
+      );
+
       setCopied(true);
 
       setTimeout(() => {
@@ -171,7 +185,9 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
 
     setIsSending(true);
@@ -204,7 +220,9 @@ export default function ContactPage() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || "Failed to send message.");
+        throw new Error(
+          result.error || "Failed to send message."
+        );
       }
 
       setStatus("Message sent successfully!");
@@ -220,21 +238,36 @@ export default function ContactPage() {
       });
     } catch (error) {
       console.error(error);
-      setStatus("Something went wrong. Please try again.");
+
+      setStatus(
+        "Something went wrong. Please try again."
+      );
     } finally {
       setIsSending(false);
     }
   };
 
   const inputClass =
-    "w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]";
+    "box-border w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400/60 focus:bg-white focus:ring-4 focus:ring-cyan-400/10 dark:border-white/10 dark:bg-white/[0.03] dark:text-white dark:placeholder:text-slate-600 dark:focus:bg-white/[0.05]";
 
   return (
     <main
       id="contact"
-      className="relative w-full min-w-0 scroll-mt-24 overflow-x-hidden overflow-y-visible bg-white px-4 pb-10 pt-7 text-slate-900 transition-colors duration-300 dark:bg-[#0a0a0a] dark:text-white sm:px-6 sm:pb-12 sm:pt-9 md:px-10 lg:pb-14 lg:pt-11"
+      className="
+        relative box-border w-full min-w-0 max-w-full
+        scroll-mt-24
+        overflow-x-hidden overflow-y-visible
+        bg-white
+        px-4 pb-10 pt-7
+        text-slate-900
+        transition-colors duration-300
+        dark:bg-[#0a0a0a] dark:text-white
+        sm:px-6 sm:pb-12 sm:pt-9
+        md:px-10
+        lg:pb-14 lg:pt-11
+      "
     >
-      <div className="relative z-10 mx-auto w-full min-w-0 max-w-6xl">
+      <div className="relative z-10 mx-auto box-border w-full min-w-0 max-w-6xl">
 
         {/* SECTION HEADING */}
         <div className="mb-6 min-w-0 text-left sm:mb-8">
@@ -247,18 +280,36 @@ export default function ContactPage() {
           </h1>
 
           <p className="mt-3 max-w-2xl break-words text-sm leading-7 text-slate-500 dark:text-slate-200 sm:text-base sm:leading-8">
-            Have a project idea, an opportunity, or simply want to say hello?
-            Tell me a little about your project and I&apos;ll get back to you.
+            Have a project idea, an opportunity, or simply want
+            to say hello? Tell me a little about your project and
+            I&apos;ll get back to you.
           </p>
         </div>
 
         {/* MAIN CONTENT */}
-        <div className="grid min-w-0 gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
+        <div className="grid min-w-0 w-full gap-5 lg:grid-cols-[0.85fr_1.15fr] lg:gap-6">
 
           {/* CONTACT INFORMATION */}
-          <div className="group relative w-full min-w-0 overflow-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
-
-            <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+          <div
+            className="
+              group relative box-border w-full min-w-0
+              overflow-hidden
+              rounded-3xl
+              border border-slate-200
+              bg-white/90
+              p-5
+              shadow-lg
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/40
+              hover:shadow-cyan-500/10
+              dark:border-white/10
+              dark:bg-[#111111]/95
+              dark:shadow-2xl
+              sm:p-6
+            "
+          >
+            <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
             <div className="min-w-0">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
@@ -270,8 +321,9 @@ export default function ContactPage() {
               </h2>
 
               <p className="mt-3 break-words text-sm leading-7 text-slate-500 dark:text-slate-200">
-                I&apos;m available for freelance projects, web applications,
-                frontend development and full-stack development opportunities.
+                I&apos;m available for freelance projects, web
+                applications, frontend development and full-stack
+                development opportunities.
               </p>
             </div>
 
@@ -301,7 +353,9 @@ export default function ContactPage() {
                   className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-cyan-400/20 bg-cyan-50 text-cyan-700 transition-all duration-300 hover:-translate-y-0.5 hover:bg-cyan-100 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400 dark:hover:bg-cyan-400/20"
                 >
                   {copied ? (
-                    <span className="text-xs font-bold">✓</span>
+                    <span className="text-xs font-bold">
+                      ✓
+                    </span>
                   ) : (
                     <LuCopy className="text-base" />
                   )}
@@ -355,7 +409,7 @@ export default function ContactPage() {
                 <span className="relative inline-flex h-3 w-3 rounded-full bg-cyan-400" />
               </span>
 
-              <p className="min-w-0 text-sm font-medium text-slate-700 dark:text-slate-200">
+              <p className="min-w-0 break-words text-sm font-medium text-slate-700 dark:text-slate-200">
                 Available for freelance projects
               </p>
             </div>
@@ -393,10 +447,12 @@ export default function ContactPage() {
 
               {/* RESPONSE + RESUME */}
               <div className="mt-6 flex min-w-0 flex-col items-start gap-4 border-t border-slate-200 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
-
                 <div className="flex min-w-0 items-center gap-2 text-sm text-slate-500 dark:text-slate-300">
                   <span className="h-2 w-2 shrink-0 rounded-full bg-cyan-400" />
-                  <span>Usually replies within 24 hours</span>
+
+                  <span className="break-words">
+                    Usually replies within 24 hours
+                  </span>
                 </div>
 
                 <a
@@ -412,9 +468,26 @@ export default function ContactPage() {
           </div>
 
           {/* FORM */}
-          <div className="group relative w-full min-w-0 overflow-x-hidden rounded-3xl border border-slate-200 bg-white/90 p-5 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#111111]/95 dark:shadow-2xl sm:p-6">
-
-            <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+          <div
+            className="
+              group relative box-border w-full min-w-0
+              overflow-visible
+              rounded-3xl
+              border border-slate-200
+              bg-white/90
+              p-5
+              shadow-lg
+              transition-all duration-300
+              hover:-translate-y-1
+              hover:border-cyan-400/40
+              hover:shadow-cyan-500/10
+              dark:border-white/10
+              dark:bg-[#111111]/95
+              dark:shadow-2xl
+              sm:p-6
+            "
+          >
+            <div className="absolute inset-x-0 top-0 h-[2px] rounded-t-3xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
 
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900 dark:text-white">
               Project Inquiry
@@ -425,18 +498,19 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-2 break-words text-sm leading-6 text-slate-500 dark:text-slate-300">
-              Share a few details so I can better understand your requirements.
+              Share a few details so I can better understand your
+              requirements.
             </p>
 
             <form
               onSubmit={handleSubmit}
-              className="mt-6 min-w-0 space-y-4"
+              className="mt-6 min-w-0 w-full space-y-4"
             >
 
               {/* NAME + EMAIL */}
-              <div className="grid min-w-0 gap-4 sm:grid-cols-2">
+              <div className="grid min-w-0 w-full gap-4 sm:grid-cols-2">
 
-                <div className="min-w-0">
+                <div className="min-w-0 w-full">
                   <label
                     htmlFor="name"
                     className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -454,7 +528,7 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="min-w-0">
+                <div className="min-w-0 w-full">
                   <label
                     htmlFor="email"
                     className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -474,7 +548,7 @@ export default function ContactPage() {
               </div>
 
               {/* PHONE */}
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <label
                   htmlFor="phone"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -507,7 +581,7 @@ export default function ContactPage() {
               />
 
               {/* BUDGET + TIMELINE */}
-              <div className="grid min-w-0 gap-4 sm:grid-cols-2">
+              <div className="grid min-w-0 w-full gap-4 sm:grid-cols-2">
 
                 {/* BUDGET */}
                 <CustomDropdown
@@ -535,7 +609,7 @@ export default function ContactPage() {
               </div>
 
               {/* SUBJECT */}
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <label
                   htmlFor="subject"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -556,7 +630,7 @@ export default function ContactPage() {
               </div>
 
               {/* MESSAGE */}
-              <div className="min-w-0">
+              <div className="min-w-0 w-full">
                 <label
                   htmlFor="message"
                   className="mb-2 block text-sm font-medium text-slate-900 dark:text-white"
@@ -574,13 +648,15 @@ export default function ContactPage() {
                 />
               </div>
 
-              {/* BUTTON */}
+              {/* SEND BUTTON */}
               <button
                 type="submit"
                 disabled={isSending}
                 className="group flex w-full cursor-pointer items-center justify-center rounded-xl bg-cyan-400 px-6 py-3.5 font-semibold text-slate-950 shadow-[0_0_25px_rgba(34,211,238,0.12)] transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.22)] disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {isSending ? "Sending..." : "Send Project Inquiry"}
+                {isSending
+                  ? "Sending..."
+                  : "Send Project Inquiry"}
 
                 {!isSending && (
                   <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
