@@ -1,5 +1,5 @@
-"use client";
 
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 import { useTheme } from "./ThemeProvider";
@@ -47,15 +47,13 @@ export default function Navbar() {
     <nav
       className={`fixed left-0 top-0 z-50 w-full border-b backdrop-blur-xl transition-colors duration-300 ${
         darkMode
-          ? "border-slate-800/70 bg-slate-950/95"
-          : "border-slate-200 bg-white/95"
+          ? "border-white/10 bg-[#0a0a0a]"
+          : "border-slate-200 bg-white"
       }`}
     >
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-10">
-
         {/* MAIN NAVBAR */}
         <div className="flex h-[72px] items-center justify-between">
-
           {/* LOGO */}
           <Link
             href="/#home"
@@ -64,7 +62,6 @@ export default function Navbar() {
           >
             {/* AESTHETIC A MONOGRAM */}
             <span className="relative flex h-10 w-9 shrink-0 cursor-pointer items-center justify-center">
-
               {/* LEFT ACCENT */}
               <span
                 className={`absolute left-0 top-1/2 h-5 w-[1px] -translate-y-1/2 transition-all duration-300 ${
@@ -127,7 +124,6 @@ export default function Navbar() {
 
           {/* DESKTOP RIGHT SIDE */}
           <div className="hidden items-center gap-4 md:flex lg:gap-5">
-
             {/* DOWNLOAD RESUME */}
             <a
               href={cvFile}
@@ -168,7 +164,6 @@ export default function Navbar() {
 
           {/* MOBILE CONTROLS */}
           <div className="flex shrink-0 items-center gap-1 md:hidden">
-
             {/* MOBILE THEME */}
             <button
               type="button"
@@ -209,12 +204,11 @@ export default function Navbar() {
           <div
             className={`border-t py-3 md:hidden ${
               darkMode
-                ? "border-slate-800"
+                ? "border-white/10"
                 : "border-slate-200"
             }`}
           >
             <div className="flex flex-col">
-
               <Link
                 href="/#home"
                 onClick={closeMenu}
@@ -290,3 +284,4 @@ export default function Navbar() {
     </nav>
   );
 }
+

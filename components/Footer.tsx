@@ -1,3 +1,4 @@
+
 "use client";
 
 export default function Footer() {
@@ -9,7 +10,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-slate-200 bg-white text-slate-900 transition-colors duration-300 dark:border-slate-800/70 dark:bg-slate-950 dark:text-white">
+    <footer className="border-t border-slate-200 bg-white text-slate-900 transition-colors duration-300 dark:border-white/10 dark:bg-[#0a0a0a] dark:text-white">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 sm:px-6 md:flex-row md:px-10">
         {/* LEFT */}
         <p className="text-center text-sm text-slate-500 dark:text-slate-400 md:text-left">
@@ -46,6 +47,7 @@ export default function Footer() {
             LinkedIn
           </a>
 
+          {/* BACK TO TOP */}
           <button
             onClick={scrollToTop}
             className="group cursor-pointer text-sm text-slate-600 transition-colors duration-300 hover:text-cyan-500 dark:text-slate-400 dark:hover:text-cyan-400"
